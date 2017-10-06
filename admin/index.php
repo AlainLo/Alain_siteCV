@@ -2,11 +2,13 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport">
+	<title> Admin : prénom nom </title>
 </head>
 <html>
 	<body>
-		Je suis Toto
-		J'aime Tata Yoyo
-		qu'est-ce qu'elle a sous son grand chapeau ?
+		<h1>Admin</h1>
+		
 	</body>
 </html>
+
