@@ -15,6 +15,9 @@
 <html>
 	<body>
 		<h1>Admin : <?= $ligne_utilisateur['prenom'].' '.$ligne_utilisateur['nom'] ?></h1>
+
+
+		<p>J'ai réussi à installer MAMP ! Champagne !!!</p>
 		
 	</body>
 </html>
