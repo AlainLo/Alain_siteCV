@@ -1,4 +1,4 @@
-<?php> require 'connexion.php'; ?>
+<?php require 'connexion.php'; ?>
 <!Doctype html>
 <html lang="fr">
 <head>
