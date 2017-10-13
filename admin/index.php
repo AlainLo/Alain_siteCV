@@ -7,18 +7,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<?php 
-		$sql = $pdoCV -> query("SELECT * FROM t_utilisateurs"); 
-		$ligne_utilisateur = $sql -> fetch(PDO::FETCH_ASSOC); 
+		$sql = $pdoCV -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '1' "); 
+		$ligne_utilisateur = $sql -> fetch(); 
 	?>
 	<title> Admin : <?= $ligne_utilisateur['prenom']; ?> <?= $ligne_utilisateur['nom']; ?></title>
 </head>
 <html>
 	<body>
-		<h1>Admin : <?= $ligne_utilisateur['prenom'].' '.$ligne_utilisateur['nom'] ?></h1>
+		<h1>Admin du site cv de <?php echo($ligne_utilisateur['prenom'].' '.$ligne_utilisateur['nom']); ?></h1>
 
 
-		<p>J'ai réussi à installer MAMP ! Champagne !!!</p>
-		
+		<p>texte</p>
+		<hr>
+		<?php
+				$sql = $pdoCV->query("SELECT * FROM t_competences");
+				$ligne_competence = $sql->fetch();
+		?>
+		<h2>accueil Admin</h2>
 	</body>
 </html>
 
