@@ -2,11 +2,14 @@
 <?php 
 
 // mise à jour de la réalisation
-if(isset($_POST['realisation'])) {// par le nom du premier input
-	$realisation = addslashes($_POST['realisation']);
+if(isset($_POST['r_titre'])) {// par le nom du premier input
+	$r_titre = addslashes($_POST['r_titre']);
+	$r_soustitre = addslashes($_POST['r_soustitre']);
+	$r_dates = addslashes($_POST['r_dates']);
+	$r_description = addslashes($_POST['r_description']);
 	$id_realisation = $_POST['id_realisation'];
 	
-	$pdoCV->exec(" UPDATE t_realisations SET realisation='$realisation' WHERE id_realisation='$id_realisation' ");
+	$pdoCV->exec(" UPDATE t_realisations SET r_titre='$r_titre', r_soustitre='$r_soustitre', r_dates='$r_dates', r_description='$r_description' WHERE id_realisation='$id_realisation' ");
 	header('location: realisations.php');
 	exit();
 }
@@ -31,10 +34,16 @@ $ligne_realisation = $sql->fetch();
 </head>
 	<body>
 		<h2>Modification d'une réalisation </h2>
-		<!-- <?php echo $ligne_realisation['realisation']; ?> -->
+		<!-- <?php echo $ligne_realisation['t_realisations']; ?> -->
 		<form action="modif_realisation.php" method="post">
-			<label for="realisation">Réalisation</label>
-			<input type="text" name="realisation" value="<?php echo $ligne_realisation['realisation']; ?>">
+			<label for="r_titre">Titre</label>
+			<input type="text" name="r_titre" value="<?php echo $ligne_realisation['r_titre']; ?>">
+			<label for="r_soustitre">Sous-Titre</label>
+			<input type="text" name="r_soustitre" value="<?php echo $ligne_realisation['r_soustitre']; ?>">
+			<label for="r_dates">Dates</label>
+			<input type="text" name="r_dates" value="<?php echo $ligne_realisation['r_dates']; ?>">
+			<label for="r_description">Description</label>
+			<input type="text" name="r_description" value="<?php echo $ligne_realisation['r_description']; ?>">
 			<input hidden name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
 			<input type="submit" value="Mettre à jour">
 		</form>

@@ -1,6 +1,11 @@
 @charset "utf-8"
 /* CSS Author : Alain Lortal */
 
-*{
-margin: 1em;
+}
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+          box-shadow: @shadow;
+}
+.alfooter{
+	background: grey;
 }

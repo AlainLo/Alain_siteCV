@@ -1,4 +1,4 @@
-<?php require 'connexion.php'; ?>
+ <?php require 'connexion.php'; ?>
 <?php 
 // gestion des contenus de la BDD
 
@@ -71,6 +71,11 @@ header("location: competences.php"); // pour revenir sur la page
 			<input type="text" name="c_niveau" id="c_niveau" placeholder="Insérer le niveau">
 			<input type="submit" value="Insérer">
 		</form>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+		<?php include('inc/footer.php');?>   
 	</body>
 </html>
 

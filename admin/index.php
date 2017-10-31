@@ -15,7 +15,6 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
 	<!--personal css-->
 	<link href="css/styleadmin.css" rel="stylesheet">
 
@@ -26,79 +25,115 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
   <body>
-  
-  <!-- Nav bar Bootstrap -->
-  <nav class="navbar-inverse">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!--<a class="navbar-brand" href="index.php">Brand</a>-->
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="utilisateur.php">Utilisateur<span class="sr-only">(current)</span></a></li>
-        <!--<li><a href="#">Link</a></li>-->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navigation <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Expérience</a></li>
-            <li><a href="#">Réalisations</a></li>
-            <li><a href="#">Formation</a></li>
-            <!--<li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>-->
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Rechercher">
+<!--nav en include -->
+<?php include('inc/navbar.php');?>
+    <section>
+      <div class="container">
+        <h1>Admin du site cv d'<?php echo($ligne_utilisateur['prenom'].' '.$ligne_utilisateur['nom']); ?></h1>
+        <h2>accueil Admin</h2>
+        <div class="row">
+          <div class="col-md-8">
+            <table class="table  table-hover table-condensed">
+              <h3>compétences acquises</h3>
+              <th> compétences </th><th> Niveau (en %) </th><th> suppression </th><th> modification </th>
+
+              <tr class="info">
+                <td> Photoshop </td>
+                <td> 40 </td>
+                <td><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></button></td>
+                <td><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></button></td></tr>
+
+              <tr class="warning">
+                <td> PHP </td>
+                <td> 10 </td>
+                <td><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></button></td>
+                <td><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></button></td>
+              </tr>
+
+              <tr class="success">
+                <td>Javascript</td>
+                <td>0</td>
+                <td><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></button></td>
+                <td><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></button></td>
+              </tr>
+
+              <tr class="active">
+                <td>HTML5</td>
+                <td>30</td>
+                <td><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></button></td>
+                <td><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></button></td>
+              </tr>
+
+              <tr class="bg-primary">
+                <td>CSS3</td>
+                <td>30</td>
+                <td><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash">
+                </button></td>
+                <td><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit">
+                </button></td>
+              </tr>
+            
+              <tr class="warning">
+                <td>JQuery</td>
+                <td>10</td>
+                <td><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash">
+                </button></td>
+                <td><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit">
+                </button></td>
+              </tr>
+
+               <tr class="danger">
+                <td>SEO</td>
+                <td>33</td>
+                <td><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash">
+                </button></td>
+                <td><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit">
+                </button></td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-4">
+            
+          <form="form-control">
+              <h3>Insertion d'une compétence</h3>
+              <div class="form-group">
+                <label>ajouter une compétence</label>
+                <input type = "text" placeholder=" ajouter une compétence"></input>
+              </div>
+
+              <div class="form-group">
+                <label>ajouter le niveau</label>
+                <input type = "text" placeholder=" ajouter un niveau" class="box-shadow"></input>
+              </div>
+
+              <div class="form-group">
+                <button type= "button" class="btn btn-success btn-xs">Valider</button>
+              </div>
+          </form>
+
+         </div>
         </div>
-        <button type="submit" class="btn btn-default">Valider</button>
-      </form>
-      <!--<ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>-->
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<!-- fin Nav bar Bootstrap-->
+		    <p>texte</p>
+		    <hr>
+		    <?php
+				  $sql = $pdoCV->query("SELECT * FROM t_competences");
+				  $ligne_competence = $sql->fetch();
+		    ?>
+		 
 
-    <h1>Admin du site cv de <?php echo($ligne_utilisateur['prenom'].' '.$ligne_utilisateur['nom']); ?></h1>
+    </section>
 
-
-		<p>texte</p>
-		<hr>
-		<?php
-				$sql = $pdoCV->query("SELECT * FROM t_competences");
-				$ligne_competence = $sql->fetch();
-		?>
-		<h2>accueil Admin</h2>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+   
+   <!--footer en include -->
+<?php include('inc/footer.php');?>   
+ 
   </body>
 </html>
 
