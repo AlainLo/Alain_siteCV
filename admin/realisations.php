@@ -17,10 +17,10 @@ if(!empty($_POST)){// insertion d'une réalisation
 
 // suppression d'une réalisation
 if(isset($_GET ['id_realisation'])){// on récupére la réalisation par son id dans l'url
-$efface = $_GET['id_realisation'];
-$sql = "DELETE FROM t_realisations WHERE id_realisation = '$efface' ";
-$pdoCV->query($sql);// on peut aussi utiliser exec si on le souhaite
-header("location: realisations.php"); // pour revenir sur la page
+	$efface = $_GET['id_realisation'];
+	$sql = "DELETE FROM t_realisations WHERE id_realisation = '$efface' ";
+	$pdoCV->query($sql);// on peut aussi utiliser exec si on le souhaite
+	header("location: realisations.php"); // pour revenir sur la page
 }// ferme le if(isset)
 ?>
 
@@ -53,25 +53,26 @@ header("location: realisations.php"); // pour revenir sur la page
 	<?php include('inc/navbar.php');?>
 	<section>
       	<div class="container">
-		<h1>Admin du site cv de <?php echo($ligne_utilisateur['prenom'].' '.$ligne_utilisateur['nom']); ?></h1>
-		<!--<p>texte</p>-->
-		<hr>
-		<?php
-				$sql = $pdoCV->prepare("SELECT * FROM t_realisations WHERE utilisateur_id='1'");
-				$sql->execute();
-				$nbr_realisations = $sql->rowCount();
-				//$ligne_realisation = $sql->fetch();
-		?>
+			<h1>Admin du site cv de <?php echo($ligne_utilisateur['prenom'].' '.$ligne_utilisateur['nom']); ?></h1>
+			<!--<p>texte</p>-->
+			<hr>
+			<?php
+					$sql = $pdoCV->prepare("SELECT * FROM t_realisations WHERE utilisateur_id='1'");
+					$sql->execute();
+					$nbr_realisations = $sql->rowCount();
+					//$ligne_realisation = $sql->fetch();
+			?>
 			<div class="row">
 		        <div class="col-md-8">
+		        	<h2> il y a <?php echo $nbr_realisations; ?> réalisations</h2>
 		            <table class="table  table-hover table-condensed">
 							<tr>
-							<th>titre</th>
-							<th>sous-titre</th>
-							<th>dates</th>	
-							<th>description</th>
-							<th>Supression</th>
-							<th>Modification</th>
+								<th>titre</th>
+								<th>sous-titre</th>
+								<th>dates</th>	
+								<th>description</th>
+								<th>Supression</th>
+								<th>Modification</th>
 							</tr>
 							<tr>
 							<?php while ($ligne_realisation = $sql->fetch()){ ?>
@@ -79,41 +80,41 @@ header("location: realisations.php"); // pour revenir sur la page
 								<td><?php echo $ligne_realisation['r_soustitre']; ?></td>
 								<td><?php echo $ligne_realisation['r_dates']; ?></td>
 								<td><?php echo $ligne_realisation['r_description']; ?></td>
-								<td><a href="realisations.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?> ">supprimer</a></td>
-								<td><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?> ">modifier</a></td>
+								<td><a href="realisations.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?> "><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></button></a></td>
+								<td><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?> "><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></button></a></td>
 							</tr>
 							<?php } ?>
 					</table>
 		       	</div>
 		    	<div class="col-md-4">
 		    		<table class="table  table-hover table-condensed">
-						<hr>
-						<form="form-control" action="realisations.php" method="post">
 						<h3>Insertion d'une réalisation</h3>
+						<hr>
 							<div class="form-group">
+						<form action="realisations.php" method="post">
 								<label for="titre">Titre</label>
-								<input type="text" name="titre" id="titre" placeholder="Insérer un titre">
+								<input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
 							</div>
 
 							<div class="form-group">
 								<label for="soustitre">Sous-Titre</label>
-								<input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre">
+								<input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
 							</div>
 
 							<div class="form-group">
 								<label for="dates">Dates</label>
-								<input type="text" name="dates" id="dates" placeholder="Insérer des dates">
+								<input type="text" name="dates" id="dates" placeholder="Insérer des dates" class="form-control">
 							</div>
 
 							<div class="form-group">
 								<label for="description">Description</label>
-								<input type="text" name="description" id="description" placeholder="Insérer une description">
+								<input type="text" name="description" id="description" placeholder="Insérer une description" class="form-control">
 							</div>
 
 							<div>
 								<input type="submit" value="Insérer">
-							</div>
 						</form>
+							</div>
 					</table>
 				</div>
 			</div>

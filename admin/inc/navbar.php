@@ -22,29 +22,30 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Parcours <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="realisations.php">Réalisations</a></li>
-            <li><a href="experiences.php">Expérience</a></li>
-            <li><a href="formation.php">Formation</a></li>
+            <li><a href="experiences.php">Expériences</a></li>
+            <li><a href="Formations.php">Formations</a></li>
            <li role="separator" class="divider"></li>
+            <li><a href="competences.php">Compétences</a></li>
             <li><a href="loisirs.php">Loisirs</a></li>
              <!--<li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>-->
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-right">
+      <!-- <form class="navbar-form navbar-right">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Rechercher">
         </div>
         <button type="submit" class="btn btn-default">Valider</button>
       </form>
      <ul class="nav navbar-nav navbar-right">
-        <!--<li><a href="#">xxxx</a></li>-->
+       <li><a href="#">xxxx</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compétences <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="competences.php">compétences</a></li>
             <li><a href="reseaux.php">réseaux</a></li>
-             <!--<li><a href="#">Something else here</a></li>
+             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>-->

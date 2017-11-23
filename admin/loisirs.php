@@ -32,41 +32,71 @@ header("location: loisirs.php"); // pour revenir sur la page
 		$ligne_utilisateur = $sql -> fetch(PDO::FETCH_ASSOC); 
 	?>
 	<title> Admin : <?= $ligne_utilisateur['prenom']; ?> <?= $ligne_utilisateur['nom']; ?></title>
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!--personal css-->
+	<link href="css/styleadmin.css" rel="stylesheet">
+
 </head>
 <html>
 	<body>
-		<h1>Admin du site cv de <?php echo($ligne_utilisateur['prenom'].' '.$ligne_utilisateur['nom']); ?></h1>
-		<!--<p>texte</p>-->
-		<hr>
-		<?php
-				$sql = $pdoCV->prepare("SELECT * FROM t_loisirs WHERE utilisateur_id='1'");
-				$sql->execute();
-				$nbr_loisirs = $sql->rowCount();
-				//$ligne_loisir = $sql->fetch();
-		?>
-		<h2> il y a <?php echo $nbr_loisirs; ?> loisirs</h2>
-		<table border="1">
-			<tr>
-				<th>loisirs</th>
-				<th>Suppression</th>
-				<th>Modification</th>
-			</tr>
-			<tr>
-				<?php while ($ligne_loisir = $sql->fetch()){ ?>
-				<td><?php echo $ligne_loisir['loisir']; ?></td>
-				<td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> ">supprimer</a></td>
-				<td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> ">modifier</a></td>
-				<td></td>
-			</tr>
-			<?php } ?>
-		</table>
-		<hr>
-		<h3>Insertion d'un loisir</h3>
-		<form action="loisirs.php" method="post">
-			<label for="loisir">Loisir</label>
-			<input type="text" name="loisir" id="loisir" placeholder="Insérer un loisir">
-			<input type="submit" value="Insérer">
-		</form>
+		<!--nav en include -->
+		<?php include('inc/navbar.php');?>
+		<section>
+      	<div class="container">
+			<h1>Admin du site cv de <?php echo($ligne_utilisateur['prenom'].' '.$ligne_utilisateur['nom']); ?></h1>
+			<!--<p>texte</p>-->
+			<hr>
+			<?php
+					$sql = $pdoCV->prepare("SELECT * FROM t_loisirs WHERE utilisateur_id='1'");
+					$sql->execute();
+					$nbr_loisirs = $sql->rowCount();
+					//$ligne_loisir = $sql->fetch();
+			?>
+			<div class="row">
+				    <div class="col-md-8">
+						<h2> il y a <?php echo $nbr_loisirs; ?> loisirs</h2>
+						<table class="table  table-hover table-condensed">
+							<tr>
+								<th>loisirs</th>
+								<th>Suppression</th>
+								<th>Modification</th>
+							</tr>
+							<tr>
+								<?php while ($ligne_loisir = $sql->fetch()){ ?>
+								<td><?php echo $ligne_loisir['loisir']; ?></td>
+								<td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> "><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+								<td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> "><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span></button></a></td>
+								<td></td>
+							</tr>
+							<?php } ?>
+						</table>
+					</div>
+					<div class="col-md-4">
+						<h2> </h2>
+						<table class="table  table-hover table-condensed">
+						<h3>Insertion d'un loisir</h3>
+						<hr>
+							<div class="form-group">
+								<form action="loisirs.php" method="post">
+									<label for="loisir">Loisir</label>
+									<input type="text" name="loisir" id="loisir" placeholder="Insérer un loisir" class="form-control">
+							</div>
+
+							<div>
+									<input type="submit" value="Insérer">
+								</form>
+							</div>	
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      	<!-- Include all compiled plugins (below), or include individual files as needed -->
+      	<script src="js/bootstrap.min.js"></script>
+			<?php include('inc/footer.php');?>   
 	</body>
 </html>
 

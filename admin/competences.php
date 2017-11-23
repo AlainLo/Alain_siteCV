@@ -33,44 +33,72 @@ header("location: competences.php"); // pour revenir sur la page
 		$ligne_utilisateur = $sql -> fetch(PDO::FETCH_ASSOC); 
 	?>
 	<title> Admin : <?= $ligne_utilisateur['prenom']; ?> <?= $ligne_utilisateur['nom']; ?></title>
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!--personal css-->
+	<link href="css/styleadmin.css" rel="stylesheet">
+
 </head>
 <html>
 	<body>
-		<h1>Admin du site cv de <?php echo($ligne_utilisateur['prenom'].' '.$ligne_utilisateur['nom']); ?></h1>
-		<!--<p>texte</p>-->
-		<hr>
-		<?php
-				$sql = $pdoCV->prepare("SELECT * FROM t_competences WHERE utilisateur_id='1'");
-				$sql->execute();
-				$nbr_competences = $sql->rowCount();
-				//$ligne_competence = $sql->fetch();
-		?>
-		<h2> il y a <?php echo $nbr_competences; ?> compétences</h2>
-		<table border="1">
-			<tr>
-				<th>Compétences</th>
-				<th>Niveau</th>
-				<th>Suppression</th>
-				<th>Modification</th>
-			</tr>
-			<tr>
-				<?php while ($ligne_competence = $sql->fetch()){ ?>
-				<td><?php echo $ligne_competence['competence']; ?></td>
-				<td><?php echo $ligne_competence['c_niveau']; ?></td>
-				<td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> ">supprimer</a></td>
-				<td><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> ">modifier</a></td>
-				<td></td>
-			</tr>
-			<?php } ?>
-		</table>
-		<hr>
-		<h3>Insertion d'une compétence</h3>
-		<form action="competences.php" method="post">
-			<label for="competence">Compétence</label>
-			<input type="text" name="competence" id="competence" placeholder="Insérer une compétence">
-			<input type="text" name="c_niveau" id="c_niveau" placeholder="Insérer le niveau">
-			<input type="submit" value="Insérer">
-		</form>
+		<!--nav en include -->
+	<?php include('inc/navbar.php');?>
+	<section>
+      	<div class="container">
+			<h1>Admin du site cv de <?php echo($ligne_utilisateur['prenom'].' '.$ligne_utilisateur['nom']); ?></h1>
+				<!--<p>texte</p>-->
+				<hr>
+				<?php
+						$sql = $pdoCV->prepare("SELECT * FROM t_competences WHERE utilisateur_id='1'");
+						$sql->execute();
+						$nbr_competences = $sql->rowCount();
+						//$ligne_competence = $sql->fetch();
+				?>
+				<div class="row">
+		        	<div class="col-md-8">
+						<h2> il y a <?php echo $nbr_competences; ?> compétences</h2>
+						<table class="table table-hover table-condensed">
+							<tr>
+								<th>Compétences</th>
+								<th>Niveau</th>
+								<th>Suppression</th>
+								<th>Modification</th>
+							</tr>
+							<tr>
+								<?php while ($ligne_competence = $sql->fetch()){ ?>
+								<td><?php echo $ligne_competence['competence']; ?></td>
+								<td><?php echo $ligne_competence['c_niveau']; ?></td>
+								<td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> "><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+								<td><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> "><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span></button></a></td>
+								<td></td>
+							</tr>
+							<?php } ?>
+						</table>
+					</div>
+					<div class="col-md-4">
+						<h2></h2>
+		    			<table class="table table-hover table-condensed">
+							<h3>Insertion d'une compétence</h3>
+							<hr>
+							<div class="form-group">
+								<form action="competences.php" method="post">
+									<label for="competence">Compétence</label>
+									<input type="text" name="competence" id="competence" placeholder="Insérer une compétence" class="form-control">
+							</div>
+
+							<div class="form-group">
+									<label for="niveau">Niveau</label>
+									<input type="text" name="c_niveau" id="c_niveau" placeholder="Insérer le niveau" class="form-control">
+							</div>
+							<div>
+								<input type="submit" value="Insérer">
+								</form>
+							</div>
+						</table>
+					</div>
+					</div>
+				</div>
+		</section>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->

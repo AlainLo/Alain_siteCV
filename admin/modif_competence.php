@@ -33,13 +33,17 @@ $ligne_competence = $sql->fetch();
 	<body>
 		<h2>Modification d'une compétence </h2>
 		<!-- <?php echo $ligne_competence['competence']; ?> -->
-		<form action="modif_competence.php" method="post">
-			<label for="competence">Compétence</label>
-			<input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>">
-			<input type="number" name="c_niveau" value="<?php echo $ligne_competence['c_niveau']; ?>">
-			<input hidden name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
-			<input type="submit" value="Mettre à jour">
-		</form>
+		<div class="form-group">
+			<form action="modif_competence.php" method="post" class="form-horizontal">
+				<label class= "control-label col-sm-2" for="competence">Compétence</label>
+				<input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>">
+				<label class= "control-label col-sm-2" for="niveau">Niveau</label>
+				<input type="number" name="c_niveau" value="<?php echo $ligne_competence['c_niveau']; ?>">
+				<input hidden name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
+				<input type="submit" value="Mettre à jour">
+			</form>
+		</div>
+		
 	</body>
 </html>
 

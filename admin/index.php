@@ -95,8 +95,8 @@
               </tr>
             </table>
           </div>
-          <div class="col-md-4">
-            
+         
+         <div class="col-md-4">
           <form="form-control">
               <h3>Insertion d'une compétence</h3>
               <div class="form-group">
@@ -122,8 +122,6 @@
 				  $sql = $pdoCV->query("SELECT * FROM t_competences");
 				  $ligne_competence = $sql->fetch();
 		    ?>
-		 
-
     </section>
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
