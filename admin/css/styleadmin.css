@@ -7,5 +7,29 @@
           box-shadow: @shadow;
 }
 .alfooter{
-	background: grey;
+	background: rgba(128,0,128,1);
+}
+
+.navbar-inverse{
+	background-color: rgba(128,0,128,1);
+}
+
+col-md-4{
+	background-color: rgba(128,0,128,0.1);
+}
+
+.nav navbar-nav{
+	background-color: rgba(128,0,128,1);
+}
+
+body{
+	background-color: rgba(128,0,128,0.5);
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+	background-color: rgba(128,0,128,0.3);
+}
+
+.form-control{
+	background-color: rgba(244,212,247,1);
 }

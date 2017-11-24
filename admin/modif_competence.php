@@ -1,5 +1,18 @@
-<?php require 'connexion.php'; ?>
-<?php 
+<?php require 'connexion.php'; 
+
+session_start();// à mettre dans toutes les pages de l'admin
+  if(isset($_SESSION['connexion']) && $_SESSION['connexion'] =='connecté'){ // on établit que la variable de session est passée et contient bien le terme "connexion"
+    $id_utilisateur=$_SESSION['id_utilisateur'];
+    $prenom=$_SESSION['prenom'];
+    $nom=$_SESSION['nom'];
+
+    //echo $_SESSION['connexion'];
+    //var_dump
+  }else{
+      //l'utilisateur n'est pas connecté 
+      header('location: sauthentifier.php');
+  }// ferme le else du if isset
+?><?php 
 
 // mise à jour de la compétence
 if(isset($_POST['competence'])) {// par le nom du premier input
