@@ -12,6 +12,8 @@ session_start();// à mettre dans toutes les pages de l'admin
       //l'utilisateur n'est pas connecté 
       header('location: sauthentifier.php');
   }// ferme le else du if isset
+
+  //var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +42,7 @@ session_start();// à mettre dans toutes les pages de l'admin
     <![endif]-->
   </head>
 
-  <body>
+  <body class="transparent">
 
 <!--nav en include -->
 <?php include('inc/navbar.php');?>

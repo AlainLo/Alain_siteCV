@@ -37,18 +37,17 @@
           <input type="text" class="form-control" placeholder="Rechercher">
         </div>
         <button type="submit" class="btn btn-default">Valider</button>
-      </form>
+      </form>-->
      <ul class="nav navbar-nav navbar-right">
-       <li><a href="#">xxxx</a></li>
+      <!-- <li><a href="#">xxxx</a></li> -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compétences <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Déconnexion <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="competences.php">compétences</a></li>
-            <li><a href="reseaux.php">réseaux</a></li>
-             <li><a href="#">Something else here</a></li>
+            <li><a href="sauthentifier.php?quitter=oui">déconnexion</a></li>
+            
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>-->
+            <li><a href="../index_public.php">site public</a></li>
+          </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -12,6 +12,18 @@ session_start();// à mettre dans toutes les pages de l'admin
       //l'utilisateur n'est pas connecté 
       header('location: sauthentifier.php');
   }// ferme le else du if isset
+
+   // pour déconnecter de l'admin
+  if(isset($_GET['quitter'])){// on récupère le terme quitter dans l'url
+    $_SESSION['connexion']=''; // on vide les variables de session 
+    $_SESSION['id_utilisateur']=''; 
+    $_SESSION['prenom']=''; 
+    $_SESSION['nom']=''; 
+
+      unset($_SESSION['connexion']);
+      session_destroy();
+    header('location:../index_public.html');
+  } // ferme le isset de la déconnexion
 ?>
 <?php 
 // gestion des contenus de la BDD
@@ -105,29 +117,29 @@ if(isset($_GET ['id_realisation'])){// on récupére la réalisation par son id 
 						<h3>Insertion d'une réalisation</h3>
 						<hr>
 							<div class="form-group">
-						<form action="realisations.php" method="post">
-								<label for="titre">Titre</label>
-								<input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
-							</div>
+								<form action="realisations.php" method="post">
+										<label for="titre">Titre</label>
+										<input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
+									</div>
 
-							<div class="form-group">
-								<label for="soustitre">Sous-Titre</label>
-								<input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
-							</div>
+									<div class="form-group">
+										<label for="soustitre">Sous-Titre</label>
+										<input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
+									</div>
 
-							<div class="form-group">
-								<label for="dates">Dates</label>
-								<input type="text" name="dates" id="dates" placeholder="Insérer des dates" class="form-control">
-							</div>
+									<div class="form-group">
+										<label for="dates">Dates</label>
+										<input type="text" name="dates" id="dates" placeholder="Insérer des dates" class="form-control">
+									</div>
 
-							<div class="form-group">
-								<label for="description">Description</label>
-								<input type="text" name="description" id="description" placeholder="Insérer une description" class="form-control">
-							</div>
+									<div class="form-group">
+										<label for="description">Description</label>
+										<input type="text" name="description" id="description" placeholder="Insérer une description" class="form-control">
+									</div>
 
-							<div>
-								<input type="submit" value="Insérer">
-						</form>
+									<div>
+										<input type="submit" value="Insérer">
+								</form>
 							</div>
 					</table>
 				</div>
