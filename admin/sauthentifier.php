@@ -16,7 +16,8 @@ session_start(); //à mettre dans toutes les pages de l'admin (même cette page)
       session_destroy();
     header('location : sauthentifier.php');
   } // ferme le isset de la déconnexion
-var_dump($_SESSION);
+
+//var_dump($_SESSION);
 if(isset($_POST['connexion'])){// on envoie le form avec le name du button(on a cliqué dessus et c'est ce qu'on obtient)
 	$email = addslashes($_POST['email']);
 	$mdp = addslashes($_POST['mdp']);

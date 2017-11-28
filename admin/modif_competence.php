@@ -12,19 +12,8 @@ session_start();// à mettre dans toutes les pages de l'admin
       //l'utilisateur n'est pas connecté 
       header('location: sauthentifier.php');
   }// ferme le else du if isset
-
-   // pour déconnecter de l'admin
-  if(isset($_GET['quitter'])){// on récupère le terme quitter dans l'url
-    $_SESSION['connexion']=''; // on vide les variables de session 
-    $_SESSION['id_utilisateur']=''; 
-    $_SESSION['prenom']=''; 
-    $_SESSION['nom']=''; 
-
-      unset($_SESSION['connexion']);
-      session_destroy();
-    header('location:../index_public.html');
-  } // ferme le isset de la déconnexion
-?><?php 
+?>
+<?php 
 
 // mise à jour de la compétence
 if(isset($_POST['competence'])) {// par le nom du premier input
