@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 31 Octobre 2017 à 16:59
+-- Généré le :  Mar 28 Novembre 2017 à 10:42
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.23
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `alainlortal_cvsite`
 --
-CREATE DATABASE IF NOT EXISTS `alainlortal_cvsite` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `alainlortal_cvsite`;
 
 -- --------------------------------------------------------
 
@@ -40,16 +38,16 @@ CREATE TABLE `t_competences` (
 --
 
 INSERT INTO `t_competences` (`id_competence`, `competence`, `c_niveau`, `utilisateur_id`) VALUES
-(1, 'Photoshop', 50, 1),
+(1, 'Photoshop', 51, 1),
 (2, 'Illustrator', 35, 2),
 (3, 'HTML5', 40, 3),
 (5, 'CSS3', 35, 1),
 (7, 'SQL', 35, 1),
-(8, 'PHP', 25, 1),
+(8, 'PHP', 15, 1),
 (9, 'WordPress', 32, 1),
-(10, 'Ajax', 16, 1),
+(10, 'Ajax', 8, 1),
 (11, 'InDesign', 40, 1),
-(12, 'Xpress', 35, 1),
+(12, 'Xpress', 30, 1),
 (13, 'Javascript', 15, 1),
 (14, 'Illustrator', 40, 1);
 
@@ -73,7 +71,10 @@ CREATE TABLE `t_experiences` (
 --
 
 INSERT INTO `t_experiences` (`id_experience`, `e_titre`, `e_soustitre`, `e_dates`, `e_description`, `utilisateur_id`) VALUES
-(1, 'Chargé de Communication', 'Extramuros', '2014-2015', 'Création de catalogues - Community Manager - Webmaster', 1);
+(4, 'Développeur/Integrateur web junior', 'LePoleS -WebForce 3', '2017-2018', 'Création de sites dynamiques PHP/CSS', 1),
+(5, 'Chargé de Communication', 'Ares', '2015-2016', 'Déploiement Charte graphique - Community Manager  Facebook - Linkedin - Twitter', 1),
+(6, 'Infographiste', 'Extramuros', '2014-2015', 'Création de catalogues - Community Manager - Webmaster', 1),
+(7, 'Chargé de Communication', 'CER SNCF Paris-Saint-Lazare', '2001-2010', 'Création-réalisation supports de com - réalisation / mise en page / gestion Journal interne - Webmastering sites internet et Intranet', 1);
 
 -- --------------------------------------------------------
 
@@ -95,9 +96,8 @@ CREATE TABLE `t_formations` (
 --
 
 INSERT INTO `t_formations` (`id_formation`, `f_titre`, `f_soustitre`, `f_dates`, `f_description`, `utilisateur_id`) VALUES
-(1, 'Diplôme d''Études Approfondies (DEA)', 'Communication, Technologies et Pouvoir', '1995', 'Département Science Politique Paris Panthéon-Sorbonne', 1),
 (2, 'Certification Intégrateur/Développeur Web', 'HTML, CSS, MySQL, PHP, Javascript, WordPress, Boot', '2017', 'Asssociation LePoles - WebForce3', 1),
-(5, 'Brevet d''Aptitude aux Fonctions d''Animateur', ' (BAFA)', '1985', 'FEEUF', 1);
+(6, 'Diplôme d''Études Approfondies (DEA)', 'Communication, Technologies et Pouvoir', '1995', 'Université Panthéon-Sorbonne Paris I', 1);
 
 -- --------------------------------------------------------
 
@@ -116,8 +116,10 @@ CREATE TABLE `t_loisirs` (
 --
 
 INSERT INTO `t_loisirs` (`id_loisir`, `loisir`, `utilisateur_id`) VALUES
-(1, 'monocycle', 1),
-(2, 'cinéma chinois', 1);
+(1, 'cinéma, séries', 1),
+(2, 'musique', 1),
+(3, 'Son', 1),
+(4, 'Photographie', 1);
 
 -- --------------------------------------------------------
 
@@ -140,8 +142,7 @@ CREATE TABLE `t_realisations` (
 
 INSERT INTO `t_realisations` (`id_realisation`, `r_titre`, `r_soustitre`, `r_dates`, `r_description`, `utilisateur_id`) VALUES
 (1, 'Société Générale', 'UX du site', '20 octobre 2017 - 2 mars 2018', 'interview des utilisateurs côté front et côté back. Élaboration des préconisations de modification de l''ergonomie générale du site', 1),
-(5, 'pouet', 'je teste', '31/10/2017 et suivants', 'n''importe...', 1),
-(6, 'Annonceo', 'site de petites annonces', 'Octobre 2017', 'rréalisatiopn d''une base dynamique d''annonces entre particuliers', 1);
+(6, 'Annonceo', 'site de petites annonces', 'Octobre 2017', 'réalisation d''une base dynamique d''annonces entre particuliers', 1);
 
 -- --------------------------------------------------------
 
@@ -249,22 +250,22 @@ ALTER TABLE `t_competences`
 -- AUTO_INCREMENT pour la table `t_experiences`
 --
 ALTER TABLE `t_experiences`
-  MODIFY `id_experience` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_experience` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `t_formations`
 --
 ALTER TABLE `t_formations`
-  MODIFY `id_formation` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_formation` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `t_loisirs`
 --
 ALTER TABLE `t_loisirs`
-  MODIFY `id_loisir` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_loisir` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `t_realisations`
 --
 ALTER TABLE `t_realisations`
-  MODIFY `id_realisation` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_realisation` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `t_titre_cv`
 --
