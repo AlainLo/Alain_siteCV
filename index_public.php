@@ -1,13 +1,5 @@
-<?php 
-$db = new PDO('mysql:host=localhost;dbname=alainlortal_cvsite;charset=utf8','root', ''); // connexion à MySQL
-$db->setAttribute(PDO::FETCH_ASSOC);
-$sql = 'SELECT * FROM t_utilisateurs';
-$resultat = $pdo->query($sql);
-$resultat['nom'] . ' ' . $resultat['nom']; ?>
- 
 
 
-?>
 <!doctype html>
 <html>
 	<head>
@@ -15,8 +7,7 @@ $resultat['nom'] . ' ' . $resultat['nom']; ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		
-		<title> Site de  <?= $resultat['prenom'] . ' ' . $resultat['nom']; ?></title>
-
+		
 		<!-- Bootstrap -->
 	  <!--  <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 		<!--personal css-->
@@ -28,33 +19,63 @@ $resultat['nom'] . ' ' . $resultat['nom']; ?>
    
 	<body>
         <header>
-         <h1> Site de  <?= $resultat['prenom']; ?> <?= $resultat['nom']; ?></h1>
+         <h1> </h1>
         </header>
-        <section>
-            utilisateur
-        </section>
+         <div>
+           éclairage
+             <object>
+            <img src="svg/eclairage.svg" alt="eclairage" style="width: 100%; height: auto;">
+            </object>
+        </div>
+        
+            <div>
+            Moi
+            <object>
+            <img src="svg/moi.svg" alt="moi" style="width: 100%; height: auto;">
+            </object>
+            </div>
 
-        <section>
+        <div>
             compétences
-		</section>	
+            <object>
+            <img src="svg/competences.svg" alt="competences" style="width: 100%; height: auto;">
+            </object>
+		</div>	
         
-        <section>
-            réalisations
-		</section>	
+        <div>
+            experiences
+            <object>
+            <img src="svg/experiences.svg" alt="experiences" style="width: 100%; height: auto;">
+            </object>
+		</div>	
         
-        <section>
-            formations
-		</section>	
+        <div>
+            realisations
+            <object>
+            <img src="svg/realisations.svg" alt="realisations" style="width: 100%; height: auto;">
+            </object>
+		</div>	
         
-        <section>
-            réseaux
-		</section>	
+        <div>
+            formation
+            <object>
+            <img src="svg/formation.svg" alt="formation" style="width: 100%; height: auto;">
+            </object>
+		</div>	
         
-        <section>
+        <div>
             loisirs
-		</section>	
+            <object>
+            <img src="svg/loisirs.svg" alt="loisirs" style="width: 100%; height: auto;">
+            </object>
+		</div>	
         
-        
+         <div>
+            Plus...
+             <object>
+             <img src="svg/plus.svg" alt="plus" style="width: 100%; height: auto;">
+            </object>
+		</div>	
 
 
 
