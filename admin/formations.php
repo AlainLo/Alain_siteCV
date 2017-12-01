@@ -54,6 +54,8 @@ header("location: formation.php"); // pour revenir sur la page
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<!--personal css-->
 	<link href="css/styleadmin.css" rel="stylesheet">
+    <!--CKEditor-->
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 </head>
 <html>
 	<body>
@@ -102,24 +104,27 @@ header("location: formation.php"); // pour revenir sur la page
 								<hr>
 								<div class="form-group">
 									<form action="formation.php" method="post">
-										<label for="titre">Titre</label>
-										<input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
+								    <label for="titre">Titre</label>
+								    <input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
 								</div>
 
 								<div class="form-group">
-										<label for="soustitre">Sous-Titre</label>
-										<input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
+								    <label for="soustitre">Sous-Titre</label>
+								    <input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
 								</div>
 
 								<div class="form-group">
-										<label for="dates">Dates</label>
-										<input type="text" name="dates" id="dates" placeholder="Insérer des dates" class="form-control">
+								    <label for="dates">Dates</label>
+								    <input type="text" name="dates" id="dates" placeholder="Insérer des dates" class="form-control">
 								</div>
 
 								<div class="form-group">
-										<label for="description">Description</label>
-										<input type="text" name="description" id="description" placeholder="Insérer une description" class="form-control">
+								    <label for="description"> Description </label>
+                                    <textarea name="description"  class="form-control" id="editor1"></textarea>
 								</div>
+                                <script>
+                                    CKEDITOR.replace('editor1');
+                                </script>
 										
 								<div>
 									<input type="submit" value="Insérer">

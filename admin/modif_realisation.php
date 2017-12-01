@@ -45,6 +45,8 @@ $ligne_realisation = $sql->fetch();
 		$ligne_utilisateur = $sql-> fetch(); 
 	?>
 	<title> Admin : <?php echo $ligne_utilisateur['prenom']; ?></title>
+    <!--CKEditor-->
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 </head>
 	<body>
 		<h2>Modification d'une réalisation </h2>
@@ -57,7 +59,10 @@ $ligne_realisation = $sql->fetch();
 			<label for="r_dates">Dates</label>
 			<input type="text" name="r_dates" value="<?php echo $ligne_realisation['r_dates']; ?>">
 			<label for="r_description">Description</label>
-			<input type="text" name="r_description" value="<?php echo $ligne_realisation['r_description']; ?>">
+			<textarea name="r_description"  class="form-control" id="editor1"><?php echo $ligne_realisation['r_description']; ?></textarea>
+			<script>
+                CKEDITOR.replace('editor1');
+            </script>
 			<input hidden name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
 			<input type="submit" value="Mettre à jour">
 		</form>

@@ -53,6 +53,8 @@ header("location: experiences.php"); // pour revenir sur la page
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<!--personal css-->
 	<link href="css/styleadmin.css" rel="stylesheet">
+     <!--CKEditor-->
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 
 </head>
 <html>
@@ -117,9 +119,12 @@ header("location: experiences.php"); // pour revenir sur la page
 							</div>
 
 							<div class="form-group">
-									<label for="description">Description</label>
-									<input type="text" name="description" id="description" placeholder="Insérer une description" class="form-control">
+								<label for="description">Description</label>
+                                <textarea name="description" class="form-control" id="editor1"></textarea>
 							</div>
+                            <script>
+                                CKEDITOR.replace('editor1');
+                            </script>
 
 							<div>
 									<input type="submit" value="Insérer">

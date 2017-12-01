@@ -51,6 +51,8 @@ header("location: competences.php"); // pour revenir sur la page
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<!--personal css-->
 	<link href="css/styleadmin.css" rel="stylesheet">
+    <!--CKEditor-->
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 
 </head>
 <html>

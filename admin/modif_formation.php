@@ -45,6 +45,8 @@ $ligne_formation = $sql->fetch();
 		$ligne_utilisateur = $sql-> fetch(); 
 	?>
 	<title> Admin : <?php echo $ligne_utilisateur['prenom']; ?></title>
+    <!--CKEditor-->
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 </head>
 	<body>
 		<h2>Modification d'une formation </h2>
@@ -57,7 +59,10 @@ $ligne_formation = $sql->fetch();
 			<label for="f_dates">Dates</label>
 			<input type="text" name="f_dates" value="<?php echo $ligne_formation['f_dates']; ?>">
 			<label for="f_description">Description</label>
-			<input type="text" name="f_description" value="<?php echo $ligne_formation['f_description']; ?>">
+            <textarea name="f_description"  class="form-control" id="editor1" > <?php echo $ligne_formation['f_description']; ?></textarea>
+			<script>
+                CKEDITOR.replace('editor1');
+            </script>
 			<input hidden name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
 			<input type="submit" value="Mettre à jour">
 		</form>

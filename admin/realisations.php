@@ -54,6 +54,8 @@ if(isset($_GET ['id_realisation'])){// on récupére la réalisation par son id 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<!--personal css-->
 	<link href="css/styleadmin.css" rel="stylesheet">
+    <!--CKEditor-->
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -94,7 +96,7 @@ if(isset($_GET ['id_realisation'])){// on récupére la réalisation par son id 
 								<td><?php echo $ligne_realisation['r_soustitre']; ?></td>
 								<td><?php echo $ligne_realisation['r_dates']; ?></td>
 								<td><?php echo $ligne_realisation['r_description']; ?></td>
-								<td><a href="realisations.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?> "><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></button></a></td>
+                                <td><a href="realisations.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?> "><button type= "button" class="btn btn-danger"><span> class="glyphicon glyphicon-trash"></span>span</button></a></td>
 								<td><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?> "><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></button></a></td>
 							</tr>
 							<?php } ?>
@@ -108,7 +110,7 @@ if(isset($_GET ['id_realisation'])){// on récupére la réalisation par son id 
 								<form action="realisations.php" method="post">
 										<label for="titre">Titre</label>
 										<input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
-									</div>
+							</div>
 
 									<div class="form-group">
 										<label for="soustitre">Sous-Titre</label>
@@ -122,9 +124,11 @@ if(isset($_GET ['id_realisation'])){// on récupére la réalisation par son id 
 
 									<div class="form-group">
 										<label for="description">Description</label>
-										<input type="text" name="description" id="description" placeholder="Insérer une description" class="form-control">
+                                        <textarea name="description" class="form-control" id="editor1"></textarea>
 									</div>
-
+                                    <script>
+                                        CKEDITOR.replace('editor1');
+                                    </script>
 									<div>
 										<input type="submit" value="Insérer">
 								</form>

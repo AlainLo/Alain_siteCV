@@ -45,6 +45,8 @@ $ligne_experience = $sql->fetch();
 		$ligne_utilisateur = $sql-> fetch(); 
 	?>
 	<title> Admin : <?php echo $ligne_utilisateur['prenom']; ?></title>
+    <!--CKEditor-->
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 </head>
 	<body>
 		<h2>Modification d'une expérience </h2>
@@ -57,7 +59,10 @@ $ligne_experience = $sql->fetch();
 			<label for="e_dates">Dates</label>
 			<input type="text" name="e_dates" value="<?php echo $ligne_experience['e_dates']; ?>">
 			<label for="e_description">Description</label>
-			<input type="text" name="e_description" value="<?php echo $ligne_experience['e_description']; ?>">
+			<textarea name="e_description"  class="form-control" id="editor1" ><?php echo $ligne_experience['e_description']; ?></textarea> 
+            <script>
+                CKEDITOR.replace('editor1');
+            </script>
 			<input hidden name="id_experience" value="<?php echo $ligne_experience['id_experience']; ?>">
 			<input type="submit" value="Mettre à jour">
 		</form>
