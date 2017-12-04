@@ -24,61 +24,57 @@
         <section>
             <div class="container">
                 <div id="eclairage">
-                    éclairage
                     <object>
                         <img src="svg/eclairage.svg" alt="eclairage" >
                     </object>
+                    
                 </div>
 
                 <div id="moi">
-                    Moi
                     <object>
                         <img src="svg/moi.svg" alt="moi" >
                     </object>
+                    <p>moi</p>
                 </div>
 
                 <div id="competences">
-                    compétences
                     <object>
                         <img src="svg/competences.svg" alt="competences" >
                     </object>
                 </div>	
 
                 <div id="experiences">
-                    experiences
                     <object>
                         <img src="svg/experiences.svg" alt="experiences" >
                     </object>
                   </div>	
 
                 <div id="realisations">
-                    realisations
                     <object>
                         <img src="svg/realisations.svg" alt="realisations" >
                     </object>
+                    <p>réalisations</p>
                 </div>	
 
                 <div id="formation">
-                    formation
                     <object>
                         <img src="svg/formation.svg" alt="formation" >
                     </object>
                 </div>	
 
                 <div id="loisirs">
-                    loisirs
                     <object>
                         <img src="svg/loisirs.svg" alt="loisirs" >
                     </object>
                 </div>	
 
                  <div id="plus">
-                    Plus...
                     <object>
                         <img src="svg/plus.svg" alt="plus" >
                     </object>
                 </div>
 
+                
                 <div id="moi_fond">
                     <object>
                         <img src="svg/moi_fond.svg" alt="moi_fond" >

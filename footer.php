@@ -1,5 +1,5 @@
  <footer class="alfooter">
- 	<div class="container-fluid">
+ 	<div>
  	<p class="well">	&copy;<?php
 $date = date("Y");
 Print("$date");
