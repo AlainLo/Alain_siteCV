@@ -64,16 +64,16 @@
                         </object>
                     </div>
                   </div>	
-                <div id="moi">
+                <div id="moi" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/moi.svg" class="svg-content" >
-                            <div class="svg-etiquette">
-                                <p> Moi, ma vie, mon oeuvre </p>
-                            </div>
-                            <div class="svg-contenu">
-                                <p> Le ver est dans le fruit, et les premiers nuages font leur apparition. Toute à son élan créatif, Paz décide de partir au Yémen pour un projet photo. Arguant de sa connaissance de ce pays dangereux, et de l’impréparation de la jeune femme, César s’oppose à son voyage. Paz cède, et tombe enceinte. C’est la deuxième partie du film. </p>
-                            </div>
-                        </object>     
+                        </object> 
+                        <div class="svg-etiquette">
+                            <p> Moi, ma vie, mon oeuvre </p>
+                        </div>
+                    </div>
+                    <div class="svg-text">
+                        <p> Le ver est dans le fruit, et les premiers nuages font leur apparition. Toute à son élan créatif, Paz décide de partir au Yémen pour un projet photo. Arguant de sa connaissance de ce pays dangereux, et de l’impréparation de la jeune femme, César s’oppose à son voyage. Paz cède, et tombe enceinte. C’est la deuxième partie du film. </p>
                     </div>
                 </div>
                 <div id="eclairage">

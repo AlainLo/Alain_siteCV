@@ -1,6 +1,6 @@
  <footer class="alfooter">
  	<div>
- 	  <p class="well">	
+ 	  <p>	
         &copy;
         <?php $date = date("Y");
         Print("$date");?> - Alain Lortal
