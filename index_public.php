@@ -7,86 +7,86 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		
-		
-		<!-- Bootstrap -->
-	  <!--  <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 		<!--personal css-->
 		<link href="css/stylepublic.css" rel="stylesheet">
-
-	   
+        <!-- fonts for this site-->
+        <link href="https://fonts.googleapis.com/css?family=Exo|Faustina|Fira+Sans:700" rel="stylesheet"> 
 	</head>
-    
    
 	<body>
         <header>
          <h1> </h1>
+            <?php include('navbar.php');?>  
         </header>
         <section>
-            <div class="container">
-                <div id="eclairage">
-                    <object>
-                        <img src="svg/eclairage.svg" alt="eclairage" >
-                    </object>
-                    
-                </div>
-
-                <div id="moi">
-                    <object>
-                        <img src="svg/moi.svg" alt="moi" >
-                    </object>
-                    <p>moi</p>
-                </div>
-
-                <div id="competences">
-                    <object>
-                        <img src="svg/competences.svg" alt="competences" >
-                    </object>
-                </div>	
-
-                <div id="experiences">
-                    <object>
-                        <img src="svg/experiences.svg" alt="experiences" >
-                    </object>
-                  </div>	
-
-                <div id="realisations">
-                    <object>
-                        <img src="svg/realisations.svg" alt="realisations" >
-                    </object>
-                    <p>réalisations</p>
-                </div>	
-
-                <div id="formation">
-                    <object>
-                        <img src="svg/formation.svg" alt="formation" >
-                    </object>
-                </div>	
-
-                <div id="loisirs">
-                    <object>
-                        <img src="svg/loisirs.svg" alt="loisirs" >
-                    </object>
-                </div>	
-
-                 <div id="plus">
-                    <object>
-                        <img src="svg/plus.svg" alt="plus" >
-                    </object>
-                </div>
-
-                
+            <div class="container"> 
                 <div id="moi_fond">
-                    <object>
-                        <img src="svg/moi_fond.svg" alt="moi_fond" >
-                    </object>
+                    <div class="svg-container">
+                        <object type="image/svg+xml" data="svg/moi_fond.svg" class="svg-content">
+                        </object>
+                    </div>
+                </div>
+                <div id="plus">
+                    <div class="svg-container">
+                        <object type="image/svg+xml" data="svg/plus.svg" class="svg-content" >
+                        </object>
+                    </div>
+                </div>
+                <div id="loisirs">
+                    <div class="svg-container">
+                        <object type="image/svg+xml" data="svg/loisirs.svg" class="svg-content" >
+                        </object>
+                    </div>
+                </div>	
+                <div id="formation">
+                    <div class="svg-container">
+                        <object type="image/svg+xml" data="svg/formation.svg" class="svg-content" >
+                        </object>
+                    </div>
+                </div>	
+                <div id="realisations">
+                    <div class="svg-container">
+                        <object type="image/svg+xml" data="svg/realisations.svg"  class="svg-content" >
+                        </object>
+                    </div>
+                </div>
+                <div id="competences">
+                    <div class="svg-container">
+                        <object type="image/svg+xml" data="svg/competences.svg"  class="svg-content" >
+                        </object>
+                    </div>
+                    
+                    
+                </div>	
+                <div id="experiences">
+                    <div class="svg-container">
+                        <object type="image/svg+xml" data="svg/experiences.svg"  class="svg-content" >
+                        </object>
+                    </div>
+                  </div>	
+                <div id="moi">
+                    <div class="svg-container">
+                        <object type="image/svg+xml" data="svg/moi.svg" class="svg-content" >
+                            <div class="svg-etiquette">
+                                <p> Moi, ma vie, mon oeuvre </p>
+                            </div>
+                            <div class="svg-contenu">
+                                <p> Le ver est dans le fruit, et les premiers nuages font leur apparition. Toute à son élan créatif, Paz décide de partir au Yémen pour un projet photo. Arguant de sa connaissance de ce pays dangereux, et de l’impréparation de la jeune femme, César s’oppose à son voyage. Paz cède, et tombe enceinte. C’est la deuxième partie du film. </p>
+                            </div>
+                        </object>     
+                    </div>
+                </div>
+                <div id="eclairage">
+                    <div class="svg-container">
+                        <object type="image/svg+xml" data="svg/eclairage.svg" class="svg-content" >
+                        </object>
+                    </div>
                 </div>
             </div>
         </section>
-        
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- jQuery -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="js/bootstrap.min.js"></script>
 		<?php include('footer.php');?>  
 	</body>
 </html>

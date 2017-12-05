@@ -102,8 +102,8 @@ header("location: experiences.php"); // pour revenir sur la page
 					<table class="table  table-hover  table-condensed">
 						<h3>Insertion d'une expérience</h3>
 						<hr>
+                            <form action="experiences.php" method="post">
 							<div class="form-group">
-								<form action="experiences.php" method="post">
 									<label for="titre">Titre</label>
 									<input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
 							</div>
@@ -128,8 +128,8 @@ header("location: experiences.php"); // pour revenir sur la page
 
 							<div>
 									<input type="submit" value="Insérer">
-								</form>
 							</div>
+                        </form>        
 					</table>	
 				</div>
 			</div>

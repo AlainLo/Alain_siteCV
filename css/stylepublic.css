@@ -21,8 +21,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseli
-        ne;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -48,23 +47,24 @@ table {
 	border-spacing: 0;
 }
 
-
 @charset "utf-8"
 /* CSS Author : Alain Lortal */
+    
 
-}
-.box-shadow(@shadow: 2px 2px 3px rgba(0,0,0,1)) {
-  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
-          box-shadow: @shadow;
-}
+
+/*
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Faustina', serif;
+font-family: 'Exo', sans-serif;
+*/
+
+
+
 .alfooter{
 	background: rgba(128,0,128,1);
     bottom: 0px;
-    display: block;
-}
-
-.navbar-inverse{
-	background-color: rgba(128,0,128,1);
+    left: 0px;
+    width: 20%;
 }
 
 .navbar{
@@ -74,77 +74,134 @@ table {
 body{
     margin: 0;
     padding: 0;
-    background-image: url(../img/glassbackground.jpg) no-repeat center fixed;
+    top: 0;
+    left: 0;
+    background: url(img/glassbackground.jpg) no-repeat center fixed;
     -webkit-background-size: cover; /* pour anciennes versions navigateurs Chrome et Safari */
     background-size: cover;
 }
 
-
-.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
-	background-color: rgba(128,0,128,0.3);
-}
-
-.form-control{
-	background-color: rgba(244,212,247,1);
-}
 .container{
-    display: block;
+    display: inline-block;
     position: relative;
-    left: 100px;
-    top: 155px;
-    width:90%;
-    height: 90%;
-    
-   
+    left: 10vw;
+    top: 0vh;
+    width: 80%;
+    height: 80%;
 }
 
-#eclairage, #moi, #competences, #experiences, #realisations, #formation, #loisirs, #plus, #moi_fond{
-    position: absolute;
+.svg-container, svg-lighting{
     display: inline-block;
-    left: 0px;
-    top: 22px;
-    transform-origin: right 15px;
+    position: absolute;
+    width: auto;
+    top: 0;
+    left: 0;
+    margin: 10%;
+    padding-bottom: 142%;
+    vertical-align: middle;
+    overflow: hidden;
+    transform-origin: right 0px;
     transform: rotate(8deg);
     width: 100%;
     height: 100%;
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,1);
-
 }
 
-#eclairage{
+.svg-container{
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+}
+
+.svg-content{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.svg-text{
+    display: inline-block;
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    padding-left: 0vw;
+    padding-top: 0vh;
+}
+
+.svg-etiquette{
+    display: inline-block;
+    position: absolute;
+    vertical-align: middle;
+    overflow: hidden;
+    transform-origin: left 2vw;
+    transform: rotate(-90deg);
+    width: 90%;
+    height: 20%;
+    padding: 1vw, 2vh, 2vw, 1.5vh;
+    font-family: 'Fira Sans', sans-serif;
+    font-size:130%;
+    font-style: normal 700;
+}
+
+
+#eclairage {
     z-index: 80;
 }
 
 #moi{
     z-index: 70;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
 }
 
 #competences{
-    z-index: 60;  
+    z-index: 60; 
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
 }
 
 #experiences{
     z-index: 50;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
 }
 
 #realisations{
     z-index: 40;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
 }
 
 #formation{
     z-index: 30;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
 }
 
 #loisirs{
     z-index: 20;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
 }
 
 #plus{
     z-index: 10;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
 }
 
 #moi_fond{
-    z-index: 0; 
+    z-index: 0;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
+    -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.15);
 }
 
 p #moi{
