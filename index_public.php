@@ -1,4 +1,5 @@
-
+<?php
+?>
 
 <!doctype html>
 <html>
@@ -15,55 +16,68 @@
    
 	<body>
         <header>
-         <h1> </h1>
+         <h1>le site de Alain </h1>
             <?php include('navbar.php');?>  
         </header>
         <section>
+                         
             <div class="container"> 
-                <div id="moi_fond">
+                
+                <div id="moi_fond" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/moi_fond.svg" class="svg-content">
                         </object>
                     </div>
                 </div>
-                <div id="plus">
+                
+                <div id="plus" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/plus.svg" class="svg-content" >
                         </object>
                     </div>
                 </div>
-                <div id="loisirs">
+                
+                <div id="loisirs" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/loisirs.svg" class="svg-content" >
                         </object>
                     </div>
-                </div>	
-                <div id="formation">
+                </div>
+                
+                <div id="formation" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/formation.svg" class="svg-content" >
                         </object>
                     </div>
                 </div>	
-                <div id="realisations">
+                
+                <div id="realisations" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/realisations.svg"  class="svg-content" >
                         </object>
                     </div>
                 </div>
-                <div id="competences">
+                
+                <div id="competences" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/competences.svg"  class="svg-content" >
                         </object>
-                    </div>
-                    
-                    
-                </div>	
-                <div id="experiences">
+                    </div>   
+                </div>
+                
+                <div id="experiences" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/experiences.svg"  class="svg-content" >
                         </object>
+                        <div class="svg-etiquette">
+                            <p> Moi, ma vie, mon oeuvre </p>
+                        </div>
                     </div>
-                  </div>	
+                    <div class="svg-text">
+                        <p> Le ver est dans le fruit, et les premiers nuages font leur apparition. Toute à son élan créatif, Paz décide de partir au Yémen pour un projet photo. Arguant de sa connaissance de ce pays dangereux, et de l’impréparation de la jeune femme, César s’oppose à son voyage. Paz cède, et tombe enceinte. C’est la deuxième partie du film. </p>
+                    </div>
+               </div>
+                
                 <div id="moi" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/moi.svg" class="svg-content" >
@@ -76,12 +90,8 @@
                         <p> Le ver est dans le fruit, et les premiers nuages font leur apparition. Toute à son élan créatif, Paz décide de partir au Yémen pour un projet photo. Arguant de sa connaissance de ce pays dangereux, et de l’impréparation de la jeune femme, César s’oppose à son voyage. Paz cède, et tombe enceinte. C’est la deuxième partie du film. </p>
                     </div>
                 </div>
-                <div id="eclairage">
-                    <div class="svg-container">
-                        <object type="image/svg+xml" data="svg/eclairage.svg" class="svg-content" >
-                        </object>
-                    </div>
-                </div>
+                
+                
             </div>
         </section>
 		<!-- jQuery -->
