@@ -64,7 +64,7 @@ body{
     position: relative;
     margin: 0;
     padding: 0;
-    background: url(img/glassbackground.jpg) no-repeat center fixed;
+    background: url(../img/glassbackground.jpg) /*no-repeat center fixed*/; 
     -webkit-background-size: cover; /* pour anciennes versions navigateurs Chrome et Safari */
     background-size: cover;
 }
@@ -107,9 +107,15 @@ body{
     display: inline-block;
     position: relative;
     left: 10vw;
-    top: 0vh;
+    top: 7vh;
     width: 80%;
     height: 80%;
+    background-color: rgba(0,0,0,0)
+}
+@media screen and (min-width: 200px) and (max-width: 640px) {
+  .container {
+   top: 2vh;
+  }
 }
 
 .svg-container{
@@ -135,8 +141,9 @@ body{
     top: 10vw;
     transform-origin: right 0;
     transform: rotate(8deg);
-    font-family: 'Exo', sans-serif;
+    font-family: 'Faustina', serif;
     font-size: 1em;
+    font-style : normal 200;
     background: linear-gradient(228deg, /*#020202*/rgba(0,0,0,0), #f2eff2);
     background-size: 100% 100%;
     /*-webkit-animation: AnimationName 41s ease infinite;
@@ -195,8 +202,34 @@ body{
     /*padding-left: 1vw;
     padding-top: 1vh;
     margin: 10% 10% 10% 10%;  */
-   
+}
 
+.dates{
+    font-family: 'Kanit Sans', sans-serif;
+    font-size: 0.9em;
+    font-style: normal 800;
+}
+
+.titre{
+    font-family: 'Kanit Sans', sans-serif;
+    font-size: 1.4em;
+    font-style: normal 800;
+}
+
+.marge{
+    margin-left: 5em;
+}
+
+.soustitre{
+    font-family: 'Kanit Sans', sans-serif;
+    font-size: 1.2em;
+    font-style: italic 700;
+}
+
+.description{
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 1em;
+    font-style: normal 200;
 }
 
 .svg-etiquette{
@@ -208,13 +241,45 @@ body{
     transform: rotate(-90deg);
     width: 90%;
     height: 20%;
-    top : 10vw;
     padding: 2vw, 1vh, 3vw, 1.5vh;
     font-family: 'Fira Sans', sans-serif;
-    font-size:1.4em;
+    font-size:1em;
     font-style: normal 700;
 }
 
+/*-----sous-éléments div onglets-----*/
+
+#plus .svg-etiquette{
+    top: 80vw;
+}
+
+#loisirs .svg-etiquette{
+    top: 68vw;
+}
+#formation .svg-etiquette{
+    top: 56vw;
+}
+#realisations .svg-etiquette{
+    top: 46vw;
+}
+#experiences .svg-etiquette{
+    top: 34.5vw;
+}
+
+#competences .svg-etiquette{
+    top: 23vw;
+}
+
+#moi .svg-etiquette{
+    top: 20vw;
+}
+
+
+
+
+
+
+/*-----div onglets-----*/
 
 #eclairage {
     z-index: 80;
