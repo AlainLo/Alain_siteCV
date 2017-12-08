@@ -4,6 +4,9 @@ $sql = $pdoCV->query(" SELECT * FROM t_titre_cv WHERE utilisateur_id ='1'");
 //ORDER BY id_titre_cv DESC LIMIT 1
 $ligne_titre_cv = $sql->fetch();
 
+$sql = $pdoCV->query(" SELECT prenom, nom, email, ville FROM t_utilisateurs WHERE id_utilisateur ='1'");
+$ligne_utilisateurs = $sql->fetch(PDO::FETCH_ASSOC);
+
 $sql = $pdoCV->query(" SELECT * FROM t_competences WHERE utilisateur_id ='1'");
 $ligne_competences = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -25,7 +28,7 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!doctype html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -163,27 +166,35 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 <span class="titre"><?= $ligne_competence['c_niveau']; ?></span><span class="marge"></span><br>
                             
                         <?php endforeach; ?>
+                    </div>
                 </div>
                     
                
                 <div id="moi" class="onglet">
                     <div class="svg-container">
-                        <object type="image/svg+xml" data="svg/moi.svg" class="svg-content" >
-                        </object> 
+                        <object type="image/svg+xml" data="svg/moi.svg"  class="svg-content" >
+                        </object>
                         <div class="svg-etiquette">
-                            <p> Moi, ma vie, mon oeuvre </p>
+                            <p> Moi</p>
                         </div>
                     </div>
                     <div class="svg-text">
-                        <p> Le ver est dans le fruit, et les premiers nuages font leur apparition. Toute à son élan créatif, Paz décide de partir au Yémen pour un projet photo. Arguant de sa connaissance de ce pays dangereux, et de l’impréparation de la jeune femme, César s’oppose à son voyage. Paz cède, et tombe enceinte. C’est la deuxième partie du film. </p>
+                        <div>
+                        <?php foreach($ligne_utilisateurs as $key => $value) : ?>
+                            
+                                <span class="<?= $key; ?>"><?= $value; ?></span><br>
+
+                                <br>
+                            
+                        <?php endforeach; ?>
+                            
+                         </div>
                     </div>
-                </div>
+               </div>
                     
                     <!--
-                -->
-                
-                
-            </div>
+                --> 
+            
         </section>
 		<!-- jQuery -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
