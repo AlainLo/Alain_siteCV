@@ -104,29 +104,37 @@ header("location: formation.php"); // pour revenir sur la page
 								<hr>
 								<div class="form-group">
 									<form action="formation.php" method="post">
-								    <label for="titre">Titre</label>
-								    <input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
+                                        <label for="titre">Titre</label>
+                                        <input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
+                                    </form>
 								</div>
 
 								<div class="form-group">
-								    <label for="soustitre">Sous-Titre</label>
-								    <input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
+                                    <form action="formation.php" method="post">
+                                        <label for="soustitre">Sous-Titre</label>
+                                        <input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
+                                    </form>
 								</div>
 
 								<div class="form-group">
-								    <label for="dates">Dates</label>
-								    <input type="text" name="dates" id="dates" placeholder="Insérer des dates" class="form-control">
+                                    <form action="formation.php" method="post">
+                                        <label for="dates">Dates</label>
+                                        <input type="text" name="dates" id="dates" placeholder="Insérer des dates" class="form-control">
+                                    </form>
 								</div>
 
 								<div class="form-group">
-								    <label for="description"> Description </label>
-                                    <textarea name="description"  class="form-control" id="editor1"></textarea>
+                                    <form action="formation.php" method="post">
+                                        <label for="description"> Description </label>
+                                        <textarea name="description"  class="form-control" id="editor1"></textarea>
+                                    </form>
 								</div>
                                 <script>
                                     CKEDITOR.replace('editor1');
                                 </script>
 										
 								<div>
+                                    <form action="formation.php" method="post">
 									<input type="submit" value="Insérer">
 									</form>
 								</div>

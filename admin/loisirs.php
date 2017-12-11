@@ -20,6 +20,7 @@ if(isset($_POST ['loisir'])){// insertion d'un loisir
 	// si on a posté un nouveau loisir
 	if ($_POST['loisir']!=''){ //si on a posté un loisir qui n'est pas vide
 			$loisir= addslashes($_POST['loisir']);
+            $l_description= addslashes($_POST['l_description']);
 			$pdoCV->exec(" INSERT INTO t_loisirs VALUES (NULL, '$loisir', '1')");// mettre $id_utilisateur quand on l'aura dans la variable de session.
 			header("location: loisirs.php");//pour revenir sur la page
 			exit();
@@ -95,6 +96,8 @@ header("location: loisirs.php"); // pour revenir sur la page
 								<form action="loisirs.php" method="post">
 									<label for="loisir">Loisir</label>
 									<input type="text" name="loisir" id="loisir" placeholder="Insérer un loisir" class="form-control">
+                                    <label for="l_description">Loisir</label>
+									<input type="textarea" name="l_description" id="l_description" placeholder="détailler un loisir" class="form-control">
 							</div>
 
 							<div>

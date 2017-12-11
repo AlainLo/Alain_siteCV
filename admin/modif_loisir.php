@@ -20,7 +20,7 @@ if(isset($_POST['loisir'])) {// par le nom du premier input
 	$loisir = addslashes($_POST['loisir']);
 	$id_loisir = $_POST['id_loisir'];
 	
-	$pdoCV->exec(" UPDATE t_loisirs SET loisir='$loisir' WHERE id_loisir='$id_loisir' ");
+	$pdoCV->exec(" UPDATE t_loisirs SET loisir='$loisir', l_description='$l_description' WHERE id_loisir='$id_loisir' ");
 	header('location: loisirs.php');
 	exit();
 }
@@ -49,6 +49,8 @@ $ligne_loisir = $sql->fetch();
 		<form action="modif_loisir.php" method="post">
 			<label for="loisir">Loisir</label>
 			<input type="text" name="loisir" value="<?php echo $ligne_loisir['loisir']; ?>">
+            <label for="l_description">Description Loisir</label>
+			<input type="text" name="l_description" value="<?php echo $ligne_loisir['l_description']; ?>">
 			<input hidden name="id_loisir" value="<?php echo $ligne_loisir['id_loisir']; ?>">
 			<input type="submit" value="Mettre à jour">
 		</form>

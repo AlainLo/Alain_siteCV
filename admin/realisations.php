@@ -110,29 +110,37 @@ if(isset($_GET ['id_realisation'])){// on récupére la réalisation par son id 
 								<form action="realisations.php" method="post">
 										<label for="titre">Titre</label>
 										<input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
+                                </form>
 							</div>
 
-									<div class="form-group">
+				            <div class="form-group">
+                                 <form action="realisations.php" method="post">
 										<label for="soustitre">Sous-Titre</label>
 										<input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
-									</div>
+                                </form>
+				            </div>
 
-									<div class="form-group">
-										<label for="dates">Dates</label>
+				            <div class="form-group">
+                                <form action="realisations.php" method="post">
+								    <label for="dates">Dates</label>
 										<input type="text" name="dates" id="dates" placeholder="Insérer des dates" class="form-control">
-									</div>
+                                </form>
+				            </div>
 
-									<div class="form-group">
-										<label for="description">Description</label>
+				            <div class="form-group">
+                                <form action="realisations.php" method="post">
+								    <label for="description">Description</label>
                                         <textarea name="description" class="form-control" id="editor1"></textarea>
-									</div>
-                                    <script>
+                                </form>
+				            </div>
+                                <script>
                                         CKEDITOR.replace('editor1');
-                                    </script>
-									<div>
-										<input type="submit" value="Insérer">
+                                </script>
+				            <div>
+                                <form action="realisations.php" method="post">
+                                    <input type="submit" value="Insérer">
 								</form>
-							</div>
+				            </div>
 					</table>
 				</div>
 			</div>

@@ -26,6 +26,8 @@
             <li><a href="Formations.php">Formations</a></li>
            <li role="separator" class="divider"></li>
             <li><a href="competences.php">Compétences</a></li>
+             <li><a href="plus.php">Plus</a></li>
+             <li><a href="reseaux.php">Reseaux</a></li>
             <li><a href="loisirs.php">Loisirs</a></li>
              <!--<li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>-->

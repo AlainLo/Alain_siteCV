@@ -1,9 +1,15 @@
  <footer class="alfooter">
  	<div>
- 	  <p>	
+        <p>
+            informations légales
+        </p>
+    </div>
+    <div>
+        <p>	
         &copy;
         <?php $date = date("Y");
         Print("$date");?> - Alain Lortal
-       <p>
- 	</div>
+        <p>
+    </div>
+ 	
  </footer>

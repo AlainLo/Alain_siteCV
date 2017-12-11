@@ -19,8 +19,11 @@ $ligne_experiences = $sql->fetchAll(PDO::FETCH_ASSOC);
 $sql = $pdoCV->query(" SELECT * FROM t_formations WHERE utilisateur_id ='1'");
 $ligne_formations = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-/*$sql = $pdoCV->query(" SELECT * FROM t_reseaux WHERE utilisateur_id ='1'");*/
-/*$ligne_reseaux = $sql->fetchAll(PDO::FETCH_ASSOC);*/
+$sql = $pdoCV->query(" SELECT * FROM t_reseaux WHERE utilisateur_id ='1'");
+$ligne_reseaux = $sql->fetchAll(PDO::FETCH_ASSOC);
+    
+$sql = $pdoCV->query(" SELECT * FROM t_plus WHERE utilisateur_id ='1'");
+$ligne_plus = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 $sql = $pdoCV->query(" SELECT * FROM t_loisirs WHERE utilisateur_id ='1'");
 $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -45,21 +48,39 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
          <h1>le site de Alain </h1>
             <?php include('navbar.php');?>  
         </header>
-        <section>
+        <section class="main">
                          
             <div class="container"> 
                 
-                <div id="moi_fond" class="onglet">
+                <div id="a_propos_fond" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/moi_fond.svg" class="svg-content">
                         </object>
                     </div>
                 </div>
                 
-                <div id="plus" class="onglet">
+                 <div id="plus" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/plus.svg" class="svg-content" >
                         </object>
+                         <div class="svg-etiquette">
+                            <p> Plus</p>
+                        </div>
+                    </div>
+                    <div class="svg-text">
+                        <p>
+                        <?php foreach($ligne_plus as $ligne_plus) : ?>
+                            
+                                <span class="dates"><?= $ligne_plus['p_dates']; ?></span><br>
+
+                                <span class="titre"><?= $ligne_plus['p_titre']; ?></span><span class="marge"></span>
+
+                                <span class="soustitre"><?= $ligne_plus['p_soustitre']; ?></span>
+
+                                <span class="description"><?= $ligne_plus['p_description']; ?></span><br>
+                            
+                            
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 
@@ -67,9 +88,22 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/loisirs.svg" class="svg-content" >
                         </object>
+                         <div class="svg-etiquette">
+                            <p> Loisirs</p>
+                        </div>
+                    </div>
+                    <div class="svg-text">
+                        <p>
+                        <?php foreach($ligne_loisirs as $ligne_loisir) : ?>
+                            
+                                <span class="titre"><?= $ligne_loisir['loisir']; ?></span><br>
+
+                                <span class="titre"><?= $ligne_loisir['l_description']; ?></span><span class="marge"></span><br>
+                            
+                        <?php endforeach; ?>
                     </div>
                 </div>
-                
+               
                 <div id="formation" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/formation.svg"  class="svg-content" >
@@ -127,7 +161,7 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                         <object type="image/svg+xml" data="svg/experiences.svg"  class="svg-content" >
                         </object>
                         <div class="svg-etiquette">
-                            <p> Expériences</p>
+                            <p> <a href= "#experiences">Expériences </a></p>
                         </div>
                     </div>
                     <div class="svg-text">
@@ -149,7 +183,7 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                </div>
              
                 
-                <div id="competences" class="onglet">
+                <div id="competences" class="onglet" index="1">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/competences.svg"  class="svg-content" >
                         </object>
@@ -170,35 +204,31 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                     
                
-                <div id="moi" class="onglet">
+                <div id="a_propos" class="onglet">
                     <div class="svg-container">
-                        <object type="image/svg+xml" data="svg/moi.svg"  class="svg-content" >
+                        <object type="image/svg+xml" data="svg/a_propos.svg"  class="svg-content" >
                         </object>
                         <div class="svg-etiquette">
-                            <p> Moi</p>
+                            <p> <a href= "#a_propos">à propos</a></p>
                         </div>
                     </div>
                     <div class="svg-text">
                         <div>
                         <?php foreach($ligne_utilisateurs as $key => $value) : ?>
                             
-                                <span class="<?= $key; ?>"><?= $value; ?></span><br>
-
-                                <br>
+                                <span class="<?= $key; ?>", ><?= $value; ?></span><br>
                             
                         <?php endforeach; ?>
                             
                          </div>
                     </div>
                </div>
-                    
-                    <!--
+                   <!--  
                 --> 
-            
+    
         </section>
 		<!-- jQuery -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script> src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<?php include('footer.php');?>  
 	</body>
 </html>

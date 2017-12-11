@@ -16,25 +16,25 @@ session_start();// à mettre dans toutes les pages de l'admin
 <?php 
 // gestion des contenus de la BDD
 
-if(!empty($_POST)){// insertion d'une expérience
-	// si on a posté une nouvelle expérience
-	if ($_POST['titre']!='' && $_POST['soustitre']!='' && $_POST['dates']!='' && $_POST['description']!='' ){ //si on a posté une expérience qui n'est pas vide
+if(!empty($_POST)){// insertion d'un plus
+	// si on a posté un nouveau plus
+	if ($_POST['titre']!='' && $_POST['soustitre']!='' && $_POST['dates']!='' && $_POST['description']!='' ){ //si on a posté un plus qui n'est pas vide
 			$titre= addslashes($_POST['titre']);
 			$soustitre= addslashes($_POST['soustitre']);
 			$dates= addslashes($_POST['dates']);
 			$description= addslashes($_POST['description']);
-			$pdoCV->exec(" INSERT INTO t_experiences VALUES (NULL, '$titre', '$soustitre', '$dates', '$description', '1')");// mettre $id_utilisateur quand on l'aura dans la variable de session.
-		//	header("location: experiences.php");//pour revenir sur la page
+			$pdoCV->exec(" INSERT INTO t_plus VALUES (NULL, '$titre', '$soustitre', '$dates', '$description', '1')");// mettre $id_utilisateur quand on l'aura dans la variable de session.
+		//	header("location: plus.php");//pour revenir sur la page
 		//	exit();
 	} //ferme le "if n'est pas vide"
 }// ferme le if(isset) du FORM
 
 // suppression d'une expérience
-if(isset($_GET ['id_experience'])){// on récupére l'expérience par son id dans l'url
-$efface = $_GET['id_experience'];
-$sql = "DELETE FROM t_experiences WHERE id_experience = '$efface' ";
+if(isset($_GET ['id_plus'])){// on récupére l'expérience par son id dans l'url
+$efface = $_GET['id_plus'];
+$sql = "DELETE FROM t_plus WHERE id_plus = '$efface' ";
 $pdoCV->query($sql);// on peut aussi utiliser exec si on le souhaite
-header("location: experiences.php"); // pour revenir sur la page
+header("location: plus.php"); // pour revenir sur la page
 }// ferme le if(isset)
 ?>
 
@@ -67,13 +67,13 @@ header("location: experiences.php"); // pour revenir sur la page
 		<!--<p>texte</p>-->
 		<hr>
 			<?php
-					$sql = $pdoCV->prepare("SELECT * FROM t_experiences WHERE utilisateur_id='1'");
+					$sql = $pdoCV->prepare("SELECT * FROM t_plus WHERE utilisateur_id='1'");
 					$sql->execute();
-					$nbr_experiences = $sql->rowCount();
+					$nbr_plus = $sql->rowCount();
 					//$ligne_experience = $sql->fetch();
 			?>
 			<div class="row">
-				<h2> il y a <?php echo $nbr_experiences; ?> expériences</h2>
+				<h2> il y a <?php echo $nbr_plus; ?> plus</h2>
 			    <div class="col-md-8">
 					<table class="table  table-hover  table-condensed">
 						<tr>
@@ -85,13 +85,13 @@ header("location: experiences.php"); // pour revenir sur la page
 							<th>Modification</th>
 						</tr>
 						<tr>
-							<?php while ($ligne_experience = $sql->fetch()){ ?>
-							<td><?php echo $ligne_experience['e_titre']; ?></td>
-							<td><?php echo $ligne_experience['e_soustitre']; ?></td>
-							<td><?php echo $ligne_experience['e_dates']; ?></td>
-							<td><?php echo $ligne_experience['e_description']; ?></td>
-							<td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> "><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>
-							<td><a href="modif_experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> "><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span></button></a></td>
+							<?php while ($ligne_plus = $sql->fetch()){ ?>
+							<td><?php echo $ligne_plus['p_titre']; ?></td>
+							<td><?php echo $ligne_plus['p_soustitre']; ?></td>
+							<td><?php echo $ligne_plus['p_dates']; ?></td>
+							<td><?php echo $ligne_plus['p_description']; ?></td>
+							<td><a href="plus.php?id_plus=<?php echo $ligne_plus['id_plus']; ?> "><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+							<td><a href="modif_plus.php?id_plus=<?php echo $ligne_plus['id_plus']; ?> "><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span></button></a></td>
 							<td></td>
 						</tr>
 						<?php } ?>
@@ -100,45 +100,36 @@ header("location: experiences.php"); // pour revenir sur la page
 				<div class="col-md-4">
 					<h2></h2>
 					<table class="table  table-hover  table-condensed">
-						<h3>Insertion d'une expérience</h3>
+						<h3>Insertion d'un plus</h3>
 						<hr>
-                            
+                            <form action="plus.php" method="post">
 							<div class="form-group">
-                                <form action="experiences.php" method="post">
 									<label for="titre">Titre</label>
 									<input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
-                                </form>
 							</div>
 
 							<div class="form-group">
-                                <form action="experiences.php" method="post">
 									<label for="soustitre">Sous-Titre</label>
 									<input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
-                                </form>
 							</div>
 
 							<div class="form-group">
-                                <form action="experiences.php" method="post">
 									<label for="dates">Dates</label>
 									<input type="text" name="dates" id="dates" placeholder="Insérer des dates" class="form-control">
-                                </form>
 							</div>
 
 							<div class="form-group">
-                                <form action="experiences.php" method="post">
-                                    <label for="description">Description</label>
-                                    <textarea name="description" class="form-control" id="editor1"></textarea>
-                                </form>
+								<label for="description">Description</label>
+                                <textarea name="description" class="form-control" id="editor1"></textarea>
 							</div>
                             <script>
                                 CKEDITOR.replace('editor1');
                             </script>
 
 							<div>
-                                <form action="experiences.php" method="post">
 									<input type="submit" value="Insérer">
-                                </form>
-							</div>       
+							</div>
+                        </form>        
 					</table>	
 				</div>
 			</div>
