@@ -1,6 +1,10 @@
-<?php require 'connexion.php'; 
+<?php 
 
 session_start();// à mettre dans toutes les pages de l'admin
+
+require 'connexion.php'; 
+
+
   if(isset($_SESSION['connexion']) && $_SESSION['connexion'] =='connecté'){ // on établit que la variable de session est passée et contient bien le terme "connexion"
     $id_utilisateur=$_SESSION['id_utilisateur'];
     $prenom=$_SESSION['prenom'];
@@ -102,43 +106,35 @@ header("location: experiences.php"); // pour revenir sur la page
 					<table class="table  table-hover  table-condensed">
 						<h3>Insertion d'une expérience</h3>
 						<hr>
-                            
-							<div class="form-group">
-                                <form action="experiences.php" method="post">
+                            <form action="experiences.php" method="post">
+                                <div class="form-group">
 									<label for="titre">Titre</label>
 									<input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
-                                </form>
-							</div>
+                                </div>
+							
+							    <div class="form-group">
+									   <label for="soustitre">Sous-Titre</label>
+									   <input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
+							    </div>
 
-							<div class="form-group">
-                                <form action="experiences.php" method="post">
-									<label for="soustitre">Sous-Titre</label>
-									<input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
-                                </form>
-							</div>
-
-							<div class="form-group">
-                                <form action="experiences.php" method="post">
+							    <div class="form-group">
 									<label for="dates">Dates</label>
 									<input type="text" name="dates" id="dates" placeholder="Insérer des dates" class="form-control">
-                                </form>
-							</div>
+							    </div>
 
-							<div class="form-group">
-                                <form action="experiences.php" method="post">
+							    <div class="form-group">
                                     <label for="description">Description</label>
                                     <textarea name="description" class="form-control" id="editor1"></textarea>
-                                </form>
-							</div>
-                            <script>
-                                CKEDITOR.replace('editor1');
-                            </script>
+                                </div>
+                           
+                                <script>
+                                    CKEDITOR.replace('editor1');
+                                </script>
 
-							<div>
-                                <form action="experiences.php" method="post">
+							    <div>
 									<input type="submit" value="Insérer">
-                                </form>
-							</div>       
+							    </div>
+                            </form>
 					</table>	
 				</div>
 			</div>

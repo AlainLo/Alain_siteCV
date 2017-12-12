@@ -101,43 +101,35 @@ header("location: formation.php"); // pour revenir sur la page
 						<h2> </h2>
 						<table class="table  table-hover table-condensed">
 							<h3>Insertion d'une formation</h3>
-								<hr>
-								<div class="form-group">
-									<form action="formation.php" method="post">
+				                <hr>
+                                <form action="formations.php" method="post">
+								    <div class="form-group">
                                         <label for="titre">Titre</label>
                                         <input type="text" name="titre" id="titre" placeholder="Insérer un titre" class="form-control">
-                                    </form>
-								</div>
+								    </div>
 
-								<div class="form-group">
-                                    <form action="formation.php" method="post">
+								    <div class="form-group">
                                         <label for="soustitre">Sous-Titre</label>
                                         <input type="text" name="soustitre" id="soustitre" placeholder="Insérer un sous-titre" class="form-control">
-                                    </form>
-								</div>
+								    </div>
 
-								<div class="form-group">
-                                    <form action="formation.php" method="post">
+								    <div class="form-group">
                                         <label for="dates">Dates</label>
                                         <input type="text" name="dates" id="dates" placeholder="Insérer des dates" class="form-control">
-                                    </form>
-								</div>
+								    </div>
 
-								<div class="form-group">
-                                    <form action="formation.php" method="post">
+								    <div class="form-group">
                                         <label for="description"> Description </label>
                                         <textarea name="description"  class="form-control" id="editor1"></textarea>
-                                    </form>
-								</div>
-                                <script>
-                                    CKEDITOR.replace('editor1');
-                                </script>
+								    </div>
+                                    <script>
+                                        CKEDITOR.replace('editor1');
+                                    </script>
 										
-								<div>
-                                    <form action="formation.php" method="post">
-									<input type="submit" value="Insérer">
-									</form>
-								</div>
+								    <div>
+									   <input type="submit" value="Insérer">
+                                    </div>
+								</form>
 						</table>
 					</div>
 				</div>			

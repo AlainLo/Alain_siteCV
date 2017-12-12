@@ -24,7 +24,7 @@ if(isset($_POST['f_titre'])) {// par le nom du premier input
 	$id_formation = $_POST['id_formation'];
 	
 	$pdoCV->exec(" UPDATE t_formations SET f_titre='$f_titre', f_soustitre='$f_soustitre', f_dates='$f_dates', f_description='$f_description' WHERE id_formation='$id_formation' ");
-	header('location: formation.php');
+	header('location: formations.php');
 	exit();
 }
 

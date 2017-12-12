@@ -1,6 +1,11 @@
- <?php require 'connexion.php'; 
+ <?php session_start();// à mettre dans toutes les pages de l'admin
 
-session_start();// à mettre dans toutes les pages de l'admin
+require 'connexion.php'; 
+
+if( isset($_POST) ) {
+    echo 'C\'est post !';
+    var_dump($_POST);
+}
   if(isset($_SESSION['connexion']) && $_SESSION['connexion'] =='connecté'){ // on établit que la variable de session est passée et contient bien le terme "connexion"
     $id_utilisateur=$_SESSION['id_utilisateur'];
     $prenom=$_SESSION['prenom'];
@@ -18,10 +23,10 @@ session_start();// à mettre dans toutes les pages de l'admin
 
 if(isset($_POST ['reseau'])){// insertion d'un réseau
 	// si on a posté une nouveau réseau
-	if ($_POST['reseau']!='' && $_POST['re_lien']!=''){ //si on a posté un réseau qui n'est pas vide
-			$competence= addslashes($_POST['reseau']);
-			$c_niveau= addslashes($_POST['re_lien']);
-			$pdoCV->exec(" INSERT INTO t_reseaux VALUES (NULL, '$reseau', '$re_lien', '1')");// mettre $id_utilisateur quand on l'aura dans la variable de session.
+	if ($_POST['rs_logo']!='' && $_POST['rs_lien']!=''){ //si on a posté un réseau qui n'est pas vide
+			$rs_logo= addslashes($_POST['rs_logo']);
+			$rs_lien= addslashes($_POST['rs_lien']);
+			$pdoCV->exec(" INSERT INTO t_reseaux VALUES (NULL, '$rs_logo', '$rs_lien', '1')");// mettre $id_utilisateur quand on l'aura dans la variable de session.
 			header("location: reseaux.php");//pour revenir sur la page
 			exit();
 	} //ferme le "if n'est pas vide"
@@ -30,7 +35,7 @@ if(isset($_POST ['reseau'])){// insertion d'un réseau
 // suppression d'un réseau
 if(isset($_GET ['id_reseau'])){// on récupére le réseau par son id dans l'url
 $efface = $_GET['id_reseau'];
-$sql = "DELETE FROM t_reseau WHERE id_reseau = '$efface' ";
+$sql = "DELETE FROM t_reseaux WHERE id_reseau = '$efface' ";
 $pdoCV->query($sql);// on peut aussi utiliser exec si on le souhaite
 header("location: reseaux.php"); // pour revenir sur la page
 }// ferme le if(isset)
@@ -68,22 +73,22 @@ header("location: reseaux.php"); // pour revenir sur la page
 						$sql = $pdoCV->prepare("SELECT * FROM t_reseaux WHERE utilisateur_id='1'");
 						$sql->execute();
 						$nbr_reseaux = $sql->rowCount();
-						//$ligne_competence = $sql->fetch();
+						//$ligne_reseau = $sql->fetch();
 				?>
 				<div class="row">
 		        	<div class="col-md-8">
 						<h2> il y a <?php echo $nbr_reseaux; ?> réseaux</h2>
 						<table class="table table-hover table-condensed">
 							<tr>
-								<th>Réseau</th>
+								<th>Logo</th>
 								<th>Lien</th>
 								<th>Suppression</th>
 								<th>Modification</th>
 							</tr>
 							<tr>
 								<?php while ($ligne_reseau = $sql->fetch()){ ?>
-								<td><?php echo $ligne_reseau['reseau']; ?></td>
-								<td><?php echo $ligne_reseau['re_lien']; ?></td>
+								<td><?php echo $ligne_reseau['rs_logo']; ?></td>
+								<td><?php echo $ligne_reseau['rs_lien']; ?></td>
 								<td><a href="reseaux.php?id_reseau=<?php echo $ligne_reseau['id_reseau']; ?> "><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>
 								<td><a href="modif_reseau.php?id_reseau=<?php echo $ligne_reseau['id_reseau']; ?> "><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span></button></a></td>
 								<td></td>
@@ -96,28 +101,25 @@ header("location: reseaux.php"); // pour revenir sur la page
 		    			<table class="table table-hover table-condensed">
 							<h3>Insertion d'un réseau</h3>
 							<hr>
-							<div class="form-group">
-								<form action="reseaux.php" method="post">
-									<label for="reseau">Réseau</label>
-									<input type="text" name="reseau" id="reseau" placeholder="Insérer un reseau" class="form-control">
-                                </form>
-							</div>
+                            <form action="reseaux.php" method="post">
+							    <div class="form-group">
+                                    <label for="rs_logo">Logo</label>
+									<input type="text" name="rs-logo" id="rs_logo" placeholder="Insérer un logo" class="form-control">
+							    </div>
 
-							<div class="form-group">
-                                <form action="reseaux.php" method="post">
-									<label for="lien">Lien</label>
-									<input type="text" name="re_lien" id="re_lien" placeholder="Insérer le lien" class="form-control">
-                                </form>
-							</div>
-							<div>
-                                <form action="reseaux.php" method="post">
-								<input type="submit" value="Insérer">
-								</form>
-							</div>
+                                <div class="form-group">
+									<label for="rs_lien">Lien</label>
+									<input type="text" name="rs_lien" id="rs_lien" placeholder="Insérer un lien" class="form-control">
+							    </div>
+                                
+							    <div>
+                                    <input type="submit" value="Insérer">
+								</div>
+                            </form>
 						</table>
 					</div>
-					</div>
 				</div>
+            </div>
 		</section>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

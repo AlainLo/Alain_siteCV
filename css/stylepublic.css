@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	/*line-height: 1;*/
     font-size: 2vw;
 }
 ol, ul {
@@ -64,6 +64,9 @@ body{
     position: relative;
     margin: 0;
     padding: 0;
+    background: url(../img/glassbackground.jpg) no-repeat center fixed; 
+    -webkit-background-size: cover; /* pour anciennes versions navigateurs Chrome et Safari */
+    background-size: cover;
 }
 @media screen and (min-width: 200px) and (max-width: 640px) {
   }
@@ -76,7 +79,9 @@ body{
     position: fixed;
     height: auto;
     color: white;
+    width: 20%;
     text-decoration: none;
+    z-index: 250;
 }
 
 .alfooter{
@@ -91,25 +96,24 @@ body{
     transform: rotate(8deg);
     color: white;
     box-sizing: border-box;
+    z-index: 250;
     
 }
 @media screen and (min-width: 200px) and (max-width: 640px) {
   .alfooter {
-   transform: none;
-      width: 80%;
+      transform: none;
+      width: 100%;
       margin:auto;
       height: auto;
-      min-height: 10vh;
+      min-height: 5vh;
   }
 }
 
 .main{
-    background: url(../img/glassbackground.jpg) /*no-repeat center fixed*/; 
-    -webkit-background-size: cover; /* pour anciennes versions navigateurs Chrome et Safari */
-    background-size: cover;
-    z-index: 0;
+    display: inline-block;
     width: 100%;
     height: 100%;
+    z-index: -10;
     margin: 0;
     top: 0;
 }

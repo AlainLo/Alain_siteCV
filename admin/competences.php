@@ -1,6 +1,7 @@
- <?php require 'connexion.php'; 
+ <?php session_start();// à mettre dans toutes les pages de l'admin
 
-session_start();// à mettre dans toutes les pages de l'admin
+ require 'connexion.php'; 
+
   if(isset($_SESSION['connexion']) && $_SESSION['connexion'] =='connecté'){ // on établit que la variable de session est passée et contient bien le terme "connexion"
     $id_utilisateur=$_SESSION['id_utilisateur'];
     $prenom=$_SESSION['prenom'];
@@ -96,24 +97,24 @@ header("location: competences.php"); // pour revenir sur la page
 		    			<table class="table table-hover table-condensed">
 							<h3>Insertion d'une compétence</h3>
 							<hr>
-							<div class="form-group">
-								<form action="competences.php" method="post">
+                            <form action="competences.php" method="post">
+							    <div class="form-group">
 									<label for="competence">Compétence</label>
 									<input type="text" name="competence" id="competence" placeholder="Insérer une compétence" class="form-control">
-							</div>
+							    </div>
 
-							<div class="form-group">
+							    <div class="form-group">
 									<label for="niveau">Niveau</label>
 									<input type="text" name="c_niveau" id="c_niveau" placeholder="Insérer le niveau" class="form-control">
-							</div>
-							<div>
-								<input type="submit" value="Insérer">
-								</form>
-							</div>
+							    </div>
+							    <div>
+								    <input type="submit" value="Insérer">
+							    </div>
+                            </form>
 						</table>
 					</div>
-					</div>
 				</div>
+            </div>
 		</section>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

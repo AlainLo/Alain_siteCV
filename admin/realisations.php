@@ -1,6 +1,8 @@
-<?php require 'connexion.php'; 
+<?php session_start();// à mettre dans toutes les pages de l'admin
 
-session_start();// à mettre dans toutes les pages de l'admin
+require 'connexion.php'; 
+
+
   if(isset($_SESSION['connexion']) && $_SESSION['connexion'] =='connecté'){ // on établit que la variable de session est passée et contient bien le terme "connexion"
     $id_utilisateur=$_SESSION['id_utilisateur'];
     $prenom=$_SESSION['prenom'];
@@ -97,7 +99,7 @@ if(isset($_GET ['id_realisation'])){// on récupére la réalisation par son id 
 								<td><?php echo $ligne_realisation['r_dates']; ?></td>
 								<td><?php echo $ligne_realisation['r_description']; ?></td>
                                 <td><a href="realisations.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?> "><button type= "button" class="btn btn-danger"><span> class="glyphicon glyphicon-trash"></span>span</button></a></td>
-								<td><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?> "><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></button></a></td>
+                                <td><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?> "><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span></button></a></td>
 							</tr>
 							<?php } ?>
 					</table>
