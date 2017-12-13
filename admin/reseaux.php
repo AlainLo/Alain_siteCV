@@ -33,9 +33,9 @@ if(isset($_POST ['reseau'])){// insertion d'un réseau
 }// ferme le if(isset) du FORM
 
 // suppression d'un réseau
-if(isset($_GET ['id_reseau'])){// on récupére le réseau par son id dans l'url
-$efface = $_GET['id_reseau'];
-$sql = "DELETE FROM t_reseaux WHERE id_reseau = '$efface' ";
+if(isset($_GET ['reseau_id'])){// on récupére le réseau par son id dans l'url
+$efface = $_GET['reseau_id'];
+$sql = "DELETE FROM t_reseaux WHERE reseau_id = '$efface' ";
 $pdoCV->query($sql);// on peut aussi utiliser exec si on le souhaite
 header("location: reseaux.php"); // pour revenir sur la page
 }// ferme le if(isset)
@@ -89,8 +89,8 @@ header("location: reseaux.php"); // pour revenir sur la page
 								<?php while ($ligne_reseau = $sql->fetch()){ ?>
 								<td><?php echo $ligne_reseau['rs_logo']; ?></td>
 								<td><?php echo $ligne_reseau['rs_lien']; ?></td>
-								<td><a href="reseaux.php?id_reseau=<?php echo $ligne_reseau['id_reseau']; ?> "><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>
-								<td><a href="modif_reseau.php?id_reseau=<?php echo $ligne_reseau['id_reseau']; ?> "><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span></button></a></td>
+								<td><a href="reseaux.php?reseau_id=<?php echo $ligne_reseau['reseau_id']; ?> "><button type= "button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+								<td><a href="modif_reseau.php?reseau_id=<?php echo $ligne_reseau['reseau_id']; ?> "><button type= "button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span></button></a></td>
 								<td></td>
 							</tr>
 							<?php } ?>

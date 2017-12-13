@@ -183,7 +183,7 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                </div>
              
                 
-               <!-- <div id="competences" class="onglet" index="1">
+                <div id="competences" class="onglet" index="1">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/competences.svg"  class="svg-content" >
                         </object>
@@ -209,7 +209,7 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                         <object type="image/svg+xml" data="svg/a_propos.svg"  class="svg-content">
                         </object>
                         <div class="svg-etiquette">
-                            <p> <!--<a href= "#a_propos">-->à propos<!--</a>--><!--</p>
+                            <p> <a href= "#a_propos">à propos</a></p>
                         </div>
                     </div>
                     <div class="svg-text">
@@ -234,7 +234,7 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                </div>
                    
-                --> 
+               <!-- --> 
     
         </section>
 		<!-- jQuery -->

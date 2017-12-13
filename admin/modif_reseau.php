@@ -19,16 +19,16 @@ session_start();// à mettre dans toutes les pages de l'admin
 if(isset($_POST['reseau'])) {// par le nom du premier input
 	$rs_logo = addslashes($_POST['rs_logo']);
 	$rs_lien = addslashes($_POST['rs_lien']);
-	$id_competence = $_POST['id_reseau'];
+	$reseau_id = $_POST['reseau_id'];
 	
-	$pdoCV->exec(" UPDATE t_reseaux SET rs_logo='$rs_logo', rs_lien='$rs_lien' WHERE id_reseau='$id_reseau' ");
+	$pdoCV->exec(" UPDATE t_reseaux SET rs_logo='$rs_logo', rs_lien='$rs_lien' WHERE reseau_id ='$reseau_id' ");
 	header('location: reseaux.php');
 	exit();
 }
 
 //je récupère le réseau
-$id_reseau = $_GET['id_reseau'];// par l'id et $_GET
-$sql = $pdoCV->query(" SELECT * FROM t_reseaux WHERE id_reseau='$id_reseau' "); // la requête est égale à l'id
+$id_reseau = $_GET['reseau_id'];// par l'id et $_GET
+$sql = $pdoCV->query(" SELECT * FROM t_reseaux WHERE reseau_id='$reseau_id' "); // la requête est égale à l'id
 $ligne_reseau = $sql->fetch();
 
 ?>
@@ -48,12 +48,12 @@ $ligne_reseau = $sql->fetch();
 		<h2>Modification d'un réseau </h2>
 		<!-- <?php echo $ligne_reseau['reseau']; ?> -->
 		<div class="form-group">
-			<form action="modif_competence.php" method="post" class="form-horizontal">
+			<form action="modif_reseau.php" method="post" class="form-horizontal">
 				<label class= "control-label col-sm-2" for="rs_logo">Logo</label>
 				<input type="text" name="rs_logo" value="<?php echo $ligne_reseau['rs_logo']; ?>">
 				<label class= "control-label col-sm-2" for="lien">Lien</label>
 				<input type="number" name="rs_lien" value="<?php echo $ligne_reseau['rs_lien']; ?>">
-				<input hidden name="id_reseau" value="<?php echo $ligne_reseau['id_reseau']; ?>">
+				<input hidden name="reseau_id" value="<?php echo $ligne_reseau['reseau_id']; ?>">
 				<input type="submit" value="Mettre à jour">
 			</form>
 		</div>
