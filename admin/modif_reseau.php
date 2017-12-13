@@ -27,7 +27,7 @@ if(isset($_POST['reseau'])) {// par le nom du premier input
 }
 
 //je récupère le réseau
-$id_reseau = $_GET['reseau_id'];// par l'id et $_GET
+$reseau_id = $_GET['reseau_id'];// par l'id et $_GET
 $sql = $pdoCV->query(" SELECT * FROM t_reseaux WHERE reseau_id='$reseau_id' "); // la requête est égale à l'id
 $ligne_reseau = $sql->fetch();
 

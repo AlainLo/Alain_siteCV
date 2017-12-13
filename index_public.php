@@ -45,7 +45,7 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
    
 	<body>
         <header>
-         <h1>le site de Alain </h1>
+            <h1>le site de Alain </h1>
             <?php include('navbar.php');?>  
         </header>
         <section class="main">
@@ -63,9 +63,6 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/plus.svg" class="svg-content" >
                         </object>
-                         <div class="svg-etiquette">
-                            <p> Plus</p>
-                        </div>
                     </div>
                     <div class="svg-text">
                         <p>
@@ -88,9 +85,6 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/loisirs.svg" class="svg-content" >
                         </object>
-                         <div class="svg-etiquette">
-                            <p> Loisirs</p>
-                        </div>
                     </div>
                     <div class="svg-text">
                         <p>
@@ -108,9 +102,6 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/formation.svg"  class="svg-content" >
                         </object>
-                        <div class="svg-etiquette">
-                            <p> Formation</p>
-                        </div>
                     </div>
                     <div class="svg-text">
                         <p>
@@ -133,9 +124,6 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/realisations.svg"  class="svg-content" >
                         </object>
-                        <div class="svg-etiquette">
-                            <p> Réalisations</p>
-                        </div>
                     </div>
                     <div class="svg-text">
                         <p>
@@ -160,9 +148,6 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/experiences.svg"  class="svg-content" >
                         </object>
-                        <div class="svg-etiquette">
-                            <p> <a href= "#experiences">Expériences </a></p>
-                        </div>
                     </div>
                     <div class="svg-text">
                         <div>
@@ -183,13 +168,10 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                </div>
              
                 
-                <div id="competences" class="onglet" index="1">
+                <div id="competences" class="onglet">
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/competences.svg"  class="svg-content" >
                         </object>
-                        <div class="svg-etiquette">
-                            <p> Compétences</p>
-                        </div>
                     </div>
                     <div class="svg-text">
                         <p>
@@ -208,9 +190,6 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <div class="svg-container">
                         <object type="image/svg+xml" data="svg/a_propos.svg"  class="svg-content">
                         </object>
-                        <div class="svg-etiquette">
-                            <p> <a href= "#a_propos">à propos</a></p>
-                        </div>
                     </div>
                     <div class="svg-text">
                         <div>
@@ -225,14 +204,49 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                         <p>
                         <?php foreach($ligne_reseaux as $ligne_reseau) : ?>
                             
-                                <span class="reseau"><?= $ligne_reseau['reseau']; ?></span><br>
+                                <span class="reseau"><a href="<?= $ligne_reseau['rs_lien']; ?>"><img src="<?= $ligne_reseau['rs_logo']; ?>"></a></span><br>
 
-                                <span class="lien"><?= $ligne_reseau['re_lien']; ?></span><span class="marge"></span><br>
+                               <br>
                             
                         <?php endforeach; ?>
+                        </div>
                     </div>
+                </div>
+                
+                <!--<div id="eclairage" class="onglet">
+                    <div class="svg-container">
+                        <object type="image/svg+xml" data="svg/eclairage.svg"  class="svg-content">
+                        </object>
                     </div>
-               </div>
+                </div>-->
+                
+                <div id="navigation" class="onglet">
+                    <div class="inner-rotate">
+                        <div class="etiquetage" id="plus">
+                            <p><a href="#plus" style="color: black;">Plus</a></p>
+                        </div>
+                        <div class="etiquetage" id="loisirs" >
+                            <p><a href="#loisirs" style="color: black;">Loisirs</a></p>
+                        </div>
+                        <div class="etiquetage" id="formation">
+                            <p><a href="#formation" style="color: black;">Formation</a></p>
+                        </div>
+                        <div class="etiquetage" id="realisations">
+                            <p><a href="#realisations" style="color: black;">réalisations</a></p>
+                        </div>
+                        <div id="experiences" class="etiquetage"
+                             >
+                            <p><a href="#experiences" style="color: black;">Expériences</a></p>
+                        </div>
+                        <div class="etiquetage" id="competences">
+                            <p><a href="#competences" style="color: black;">Compétences</a></p>
+                        </div>
+                        <div class="etiquetage" id="a_propos" >
+                            <p><a href="#a_propos" style="color: black;">à propos</a></p>
+                        </div>
+                    </div>
+            </div>
+            </div>
                    
                <!-- --> 
     

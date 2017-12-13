@@ -107,6 +107,7 @@ header("location: competences.php"); // pour revenir sur la page
 									<label for="niveau">Niveau</label>
 									<input type="text" name="c_niveau" id="c_niveau" placeholder="Insérer le niveau" class="form-control">
 							    </div>
+                                
 							    <div>
 								    <input type="submit" value="Insérer">
 							    </div>

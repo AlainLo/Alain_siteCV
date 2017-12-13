@@ -104,16 +104,16 @@ header("location: reseaux.php"); // pour revenir sur la page
                             <form action="reseaux.php" method="post">
 							    <div class="form-group">
                                     <label for="rs_logo">Logo</label>
-									<input type="text" name="rs-logo" id="rs_logo" placeholder="Insérer un logo" class="form-control">
+									<input type="text" name="rs_logo" id="rs_logo" placeholder="Insérer un logo" class="form-control">
 							    </div>
 
                                 <div class="form-group">
-									<label for="rs_lien">Lien</label>
+									<label for="lien">Lien</label>
 									<input type="text" name="rs_lien" id="rs_lien" placeholder="Insérer un lien" class="form-control">
 							    </div>
                                 
 							    <div>
-                                    <input type="submit" value="Insérer">
+                                    <input type="submit" name="reseau" value="Insérer">
 								</div>
                             </form>
 						</table>
