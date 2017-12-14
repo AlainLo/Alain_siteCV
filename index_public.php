@@ -222,27 +222,40 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                 
                 <div id="navigation" class="onglet">
                     <div class="inner-rotate">
-                        <div class="etiquetage" id="plus">
-                            <p><a href="#plus" style="color: black;">Plus</a></p>
+                        <div id="plus" class="etiquetage">
+                            <div class="etiquette">
+                                <p><a href="#plus">Plus</a></p>
+                            </div>
                         </div>
-                        <div class="etiquetage" id="loisirs" >
-                            <p><a href="#loisirs" style="color: black;">Loisirs</a></p>
+                        <div id="loisirs" class="etiquetage">
+                            <div class="etiquette">
+                                <p><a href="#loisirs">Loisirs</a></p>
+                            </div>
                         </div>
-                        <div class="etiquetage" id="formation">
-                            <p><a href="#formation" style="color: black;">Formation</a></p>
+                        <div id="formation" class="etiquetage">
+                            <div class="etiquette">
+                                <p><a href="#formation" >Formation</a></p>
+                            </div>    
                         </div>
-                        <div class="etiquetage" id="realisations">
-                            <p><a href="#realisations" style="color: black;">réalisations</a></p>
+                        <div id="realisations" class="etiquetage">
+                            <div class="etiquette">
+                                <p><a href="#realisations"> réalisations </a></p>
+                            </div>    
                         </div>
-                        <div id="experiences" class="etiquetage"
-                             >
-                            <p><a href="#experiences" style="color: black;">Expériences</a></p>
+                        <div id="experiences" class="etiquetage">
+                            <div class="etiquette">
+                                <p><a href="#experiences"> Expériences </a></p>
+                            </div>
                         </div>
-                        <div class="etiquetage" id="competences">
-                            <p><a href="#competences" style="color: black;">Compétences</a></p>
+                        <div id="competences" class="etiquetage" >
+                            <div class="etiquette">
+                                <p><a href="#competences"> Compétences </a></p>
+                            </div>
                         </div>
-                        <div class="etiquetage" id="a_propos" >
-                            <p><a href="#a_propos" style="color: black;">à propos</a></p>
+                        <div id="a_propos" class="etiquetage"  >
+                            <div class="etiquette">
+                                <p><a href="#a_propos"> à propos</a></p>
+                            </div>
                         </div>
                     </div>
             </div>
@@ -251,8 +264,20 @@ $ligne_loisirs = $sql->fetchAll(PDO::FETCH_ASSOC);
                <!-- --> 
     
         </section>
+        <script >var pages = document.getElementsByClassName("onglet")
+// console.log(pages)
+for(var i=0; i<pages.length; i++){
+  pages[i].addEventListener("click",function(){
+    console.log(this)
+    for (var j=0; j<pages.length; j++){
+      // console.log(pages[j].parentNode)
+      pages[j].parentNode.classList.remove("active")
+    }
+   this.parentNode.classList.add("active")
+  })
+}</script>
 		<!-- jQuery -->
-      <script> src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<?php include('footer.php');?>  
 	</body>
 </html>

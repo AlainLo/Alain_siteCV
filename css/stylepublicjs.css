@@ -60,12 +60,12 @@ font-family: 'Faustina', serif;
 font-family: 'Exo', sans-serif;
 */
     
-body{
+/*body{
     position: relative;
 }
 @media screen (min-width: 200px) & (max-width: 640px) {
   }
-}
+}*/
 
 .navbar{
 	background-color: rgba(0,0,0,1);
@@ -105,18 +105,7 @@ body{
   }
 }
 
-.main{
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-    margin: 0;
-    top: 0;
-    background: url(../img/glassbackground.jpg) no-repeat center fixed; 
-    background-size: cover;
-}
-
-.container{
+/*.container{
     display: inline-block;
     position: relative;
     left: 10vw;
@@ -125,7 +114,7 @@ body{
     /*background: linear-gradient(228deg,#020202,rgba(0,0,0,0), #f2eff2);
    background-size: 100%;*/
 }
-@media screen and (min-width: 200px) and (max-width: 640px) {
+/*@media screen and (min-width: 200px) and (max-width: 640px) {
   .container {
    top: 2vh;
   }
@@ -173,9 +162,9 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
-}
+}*/
 /*----- classes contenus div -----*/
-
+/*
 .svg-text{
     display: inline-block;
     position: absolute;
@@ -185,7 +174,7 @@ body{
     height: 85%;
     /*padding-left: 1vw;
     padding-top: 1vh;
-    margin: 10% 10% 10% 10%;  */
+    margin: 10% 10% 10% 10%; *//*
 }
 
 .dates{
@@ -225,10 +214,158 @@ body{
     height: 1.2em;
 }
 
+/*-----pages-----*/
+.page{
+  position: absolute;
+  z-index:0;
+  pointer-events:none;
+    left: 0;
+    top:0;
+}
+.active{
+  z-index: 110;
+}
+.page .onglet, .page .main{
+  display: inline-block;
+  vertical-align: top;  
+  margin: 0;
+  padding: 0;
+}
+/*
+#page_1 .onglet, #page_1 .main{
+  background: purple;
 
+}
+#page_2 .onglet, #page_2 .main{
+  left: 1vw;
+}
+
+#page_3 .onglet, #page_3 .main{
+  background: yellow;
+}
+#page_4 .onglet, #page_4 .main{
+  background: blue;
+}
+#page_5 .onglet, #page_5 .main{
+  background: green;
+}
+#page_6.onglet, #page_6 .main{
+  background: orange;
+}
+#page_7.onglet, #page_7 .main{
+  background: grey;
+}
+#page_8.onglet, #page_8 .main{
+  background: purple;
+}
+*/
+
+.onglet{ 
+  pointer-events:all;
+  /* width: 40px; */
+  height:40px;
+  transform: rotate(-90deg);
+  position: relative;
+}
+/*.onglet:after { 
+  content:' '; 
+  border:0; 
+  position:relative; 
+  left:-21px; 
+  bottom:0px; 
+  width:20px;                 
+  height:100px; 
+  border-radius: 0 0 20px 0; 
+  background:#fff;
+  }
+.onglet:before { 
+  content:' '; 
+  border:0; 
+  position:relative; 
+  right:-21px; 
+  bottom:0px; 
+  width:20px; 
+  height:100px; 
+  border-radius: 0 0 0 20px; 
+  background:#fff;
+}*/
+#page_8 .onglet{
+  top: 600px;
+z-index: 0;
+}
+#page_7 .onglet{
+  top: 540px;
+    z-index: 10;
+}
+#page_6 .onglet{
+  top: 480px;
+    z-index: 20;
+}
+#page_5 .onglet{
+  top: 240px;
+    z-index: 30;
+}
+#page_4 .onglet{
+  top: 180px;
+    z-index: 40;
+}
+#page_3 .onglet{
+  top: 120px;
+    z-index: 50;
+}
+#page_2 .onglet{
+  top: 60px;
+    z-index: 60;
+}
+#page_1 .onglet{
+  top: 0px;
+    z-index: 70;
+}
+
+
+#page_8,  #page_7, #page_6, #page_5, #page_4, #page_3, #page_2, #page_1, 
+{
+    right:0;
+    top: 0; 
+    position: relative;
+    
+}
+#page_8{
+z-index: 0;
+}
+#page_7{
+    z-index: 10;
+}
+#page_6{
+    z-index: 20;
+}
+#page_5{
+    z-index: 30;
+}
+#page_4{
+    z-index: 40;
+}
+#page_3{
+    z-index: 50;
+}
+#page_2{
+    z-index: 60;
+}
+#page_1{
+    z-index: 70;
+}
+
+
+
+.main{
+  width: 596px;
+  height:842px; 
+ background: url(../img/glassbackground.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
 /*-----sous-éléments div onglets-----*/
 
-#navigation {
+/*#navigation {
     z-index: 300;
     background: none;
     position: relative;
@@ -248,15 +385,15 @@ body{
 
 .etiquetage {
     display: inline-block;
-    /*position: absolute;*/
+    position: absolute;
 }
 
 .etiquette{
     position: relative;
     color: rgba(0,0,0,1);
     left: 0vw;
-    /*margin-left: 2vw;
-    margin-right: 2vw;*/
+    margin-left: 2vw;
+    margin-right: 2vw;
     
 }
 
@@ -327,10 +464,10 @@ body{
   #plus>.etiquette {
     left: 5vw; 
   }
-}
+}*/
 /*-----div onglets-----*/
 
-#eclairage {
+/*#eclairage {
     z-index: 120;
 }
 
@@ -401,5 +538,5 @@ body{
 #a_propos_fond{
     z-index: 5;
 }
-
+*/
 
