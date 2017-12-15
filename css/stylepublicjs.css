@@ -60,22 +60,22 @@ font-family: 'Faustina', serif;
 font-family: 'Exo', sans-serif;
 */
     
-/*body{
+body{
     position: relative;
 }
 @media screen (min-width: 200px) & (max-width: 640px) {
   }
-}*/
+
 
 .navbar{
 	background-color: rgba(0,0,0,1);
-    padding : 2em 2em 0 2em;
+    padding : 2em 2em 2em 2em;
     top: 0;
     left: 0;
     position: fixed;
     height: auto;
     color: white;
-    width: 20%;
+    width: 18%;
     text-decoration: none;
     z-index: 250;
 }
@@ -87,7 +87,7 @@ font-family: 'Exo', sans-serif;
     bottom: 0px;
     right: 0px;
     width: 20%;
-    height: 25%;
+    height: auto;
     transform-origin: right 0px;
     transform: rotate(8deg);
     color: white;
@@ -105,15 +105,8 @@ font-family: 'Exo', sans-serif;
   }
 }
 
-/*.container{
-    display: inline-block;
-    position: relative;
-    left: 10vw;
-    width: 80%;
-    height: 80%;
     /*background: linear-gradient(228deg,#020202,rgba(0,0,0,0), #f2eff2);
-   background-size: 100%;*/
-}
+
 /*@media screen and (min-width: 200px) and (max-width: 640px) {
   .container {
    top: 2vh;
@@ -163,8 +156,10 @@ font-family: 'Exo', sans-serif;
     width: 100%;
     height: 100%;
 }*/
+
 /*----- classes contenus div -----*/
-/*
+
+
 .svg-text{
     display: inline-block;
     position: absolute;
@@ -172,9 +167,6 @@ font-family: 'Exo', sans-serif;
     left: 7vw;
     width: 85%;
     height: 85%;
-    /*padding-left: 1vw;
-    padding-top: 1vh;
-    margin: 10% 10% 10% 10%; *//*
 }
 
 .dates{
@@ -215,29 +207,71 @@ font-family: 'Exo', sans-serif;
 }
 
 /*-----pages-----*/
+.base{
+    position: relative;
+    background-color: rgba(0,0,0,0);
+    height: 100%;
+    width: 100%;
+    transform-origin: 12vw;
+    transform: rotate(8deg);
+}
+
+.wallpaper{
+    background: url(../img/glassbackground.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
 .page{
   position: absolute;
-  z-index:0;
+  z-index: 0;
   pointer-events:none;
+    margin: 0;
     left: 0;
-    top:0;
+    top: 0;
+    width: 100%;
+    height:100%;
 }
-.active{
-  z-index: 110;
+
+.main{
+position: absolute;
+left: 5vw;
+top: 5vw;
+  width: 80%;
+  height:80%; 
 }
+
 .page .onglet, .page .main{
   display: inline-block;
   vertical-align: top;  
   margin: 0;
   padding: 0;
 }
+
+.svg-container {
+display: inline-block;
+position: relative;
+width: 100%;
+padding-bottom: 100%;
+vertical-align: middle;
+overflow: hidden;
+}
+
+.svg-content {
+display: inline-block;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+
 /*
 #page_1 .onglet, #page_1 .main{
   background: purple;
 
 }
 #page_2 .onglet, #page_2 .main{
-  left: 1vw;
+  background: red;
 }
 
 #page_3 .onglet, #page_3 .main{
@@ -261,11 +295,13 @@ font-family: 'Exo', sans-serif;
 */
 
 .onglet{ 
-  pointer-events:all;
-  /* width: 40px; */
+  pointer-events: all;
+  width: 60px;
   height:40px;
+    top:0px;
   transform: rotate(-90deg);
-  position: relative;
+  position: absolute;
+left: 16vw;
 }
 /*.onglet:after { 
   content:' '; 
@@ -289,44 +325,53 @@ font-family: 'Exo', sans-serif;
   border-radius: 0 0 0 20px; 
   background:#fff;
 }*/
-#page_8 .onglet{
-  top: 600px;
-z-index: 0;
-}
+
+
 #page_7 .onglet{
-  top: 540px;
-    z-index: 10;
+    top: 55vw;
+    z-index: 300;
+    font-size: 0.9em;
 }
 #page_6 .onglet{
-  top: 480px;
-    z-index: 20;
+    top: 46.5vw;
+    z-index: 300;
+    font-size: 0.9em;
 }
 #page_5 .onglet{
-  top: 240px;
-    z-index: 30;
+    top: 40vw;
+    z-index: 300;
+    font-size: 0.9em;
 }
 #page_4 .onglet{
-  top: 180px;
-    z-index: 40;
+    top: 32vw;
+    z-index: 300;
+    font-size: 0.9em;
 }
 #page_3 .onglet{
-  top: 120px;
-    z-index: 50;
+    top: 23.5vw;
+    z-index: 300;
+    font-size: 0.9em;
 }
 #page_2 .onglet{
-  top: 60px;
-    z-index: 60;
+    top: 16vw;
+    z-index: 300;
+    font-size: 0.9em;
+
 }
 #page_1 .onglet{
-  top: 0px;
-    z-index: 70;
+    top: 6.5vw;
+    z-index: 300;
+    font-size: 0.9em;
+    
 }
 
 
 #page_8,  #page_7, #page_6, #page_5, #page_4, #page_3, #page_2, #page_1, 
 {
     right:0;
-    top: 0; 
+    top: 0px; 
+    margin:0;
+    padding: 0;
     position: relative;
     
 }
@@ -355,13 +400,8 @@ z-index: 0;
     z-index: 70;
 }
 
-
-
-.main{
-  width: 596px;
-  height:842px; 
- background: url(../img/glassbackground.jpg) no-repeat center fixed; 
-    background-size: cover;
+.active{
+  z-index: 250;
 }
 /*-----sous-éléments div onglets-----*/
 
